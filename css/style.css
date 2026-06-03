@@ -440,7 +440,7 @@ li {
 }
 
 .service-summary {
-  margin: 0 0 50px;
+  margin: 0 0 28px;
   color: var(--gray);
   font-size: 17px;
   font-weight: 700;
@@ -460,7 +460,7 @@ li {
 .service-items {
   display: grid;
   gap: 28px;
-  margin: auto 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
   border-top: 0;
@@ -515,7 +515,7 @@ li {
 
 .service-item-body span {
   color: var(--gray);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.8;
 }
@@ -830,7 +830,7 @@ li {
   }
 
   .service-summary {
-    margin-bottom: 34px;
+    margin-bottom: 22px;
   }
 
   .service-items {
