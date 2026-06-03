@@ -57,9 +57,8 @@ a {
   position: fixed;
   inset: 0 0 auto;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--paper);
   border-bottom: 1px solid transparent;
-  backdrop-filter: blur(18px);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -252,6 +251,11 @@ h2 .accent,
   align-items: start;
 }
 
+.intro-grid {
+  grid-template-columns: minmax(470px, 1fr) minmax(0, 0.95fr);
+  gap: 104px;
+}
+
 h2 {
   margin: 0;
   font-size: clamp(36px, 4.8vw, 68px);
@@ -349,7 +353,7 @@ li {
 
 .service-detail {
   padding-top: 0;
-  background: var(--soft);
+  background: var(--paper);
 }
 
 .service-grid {
@@ -407,7 +411,7 @@ li {
   white-space: nowrap;
 }
 
-.service-card.prototype h3.single-line {
+.service-card h3.single-line {
   font-size: 37px;
 }
 
