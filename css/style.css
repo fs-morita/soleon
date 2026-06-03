@@ -537,8 +537,9 @@ li {
 
 @media (max-width: 900px) {
   .header-inner {
-    width: min(100% - 32px, var(--max));
+    width: 100%;
     height: 72px;
+    padding-right: 16px;
   }
 
   .brand {
