@@ -647,6 +647,10 @@ li {
     transform: translateY(-24px);
   }
 
+  .service-hero p .line {
+    white-space: normal;
+  }
+
   .service-card {
     min-height: auto;
     padding: 21px 42px;
