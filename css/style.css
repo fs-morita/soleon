@@ -684,12 +684,18 @@ li {
     padding: 21px 42px;
   }
 
+  .service-card h3,
   .service-card.prototype h3.single-line {
-    font-size: clamp(22px, 5.6vw, 32px);
+    font-size: 24px;
   }
 
+  .service-card p:not(.service-number),
   .service-card.prototype p.single-line {
-    font-size: clamp(12px, 3.1vw, 17px);
+    font-size: 15px;
+  }
+
+  .service-card p.single-line {
+    white-space: normal;
   }
 
   .model-grid {
@@ -701,6 +707,14 @@ li {
     height: 70px;
     margin-left: 34px;
     background: linear-gradient(180deg, var(--cyan), var(--magenta), var(--lime));
+  }
+
+  .model-item {
+    min-width: 0;
+  }
+
+  .model-item .line {
+    white-space: normal;
   }
 
   .company-list div {
@@ -732,16 +746,14 @@ li {
     font-size: clamp(30px, 9vw, 36px);
   }
 
-  .service-card h3 {
-    font-size: 24px;
-  }
-
+  .service-card h3,
   .service-card.prototype h3.single-line {
-    font-size: clamp(18px, 5.1vw, 22px);
+    font-size: clamp(16px, 4.8vw, 20px);
   }
 
+  .service-card p:not(.service-number),
   .service-card.prototype p.single-line {
-    font-size: clamp(7.5px, 2.35vw, 12px);
+    font-size: 13px;
   }
 
   .hero-copy {
@@ -766,7 +778,7 @@ li {
   }
 
   .model-item p {
-    font-size: clamp(7.5px, 2.45vw, 16px);
+    font-size: 13px;
   }
 
   .footer-inner {
