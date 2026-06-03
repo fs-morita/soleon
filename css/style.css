@@ -73,19 +73,23 @@ a {
   align-items: center;
   justify-content: space-between;
   width: min(100% - 48px, var(--max));
-  height: 76px;
+  height: 88px;
   margin: 0 auto;
 }
 
 .brand {
-  display: block;
-  width: 182px;
+  display: flex;
+  align-items: center;
+  height: 88px;
+  max-width: min(48vw, 420px);
   overflow: hidden;
 }
 
 .brand img {
-  width: 182px;
-  height: auto;
+  width: auto;
+  height: 88px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -534,12 +538,17 @@ li {
 @media (max-width: 900px) {
   .header-inner {
     width: min(100% - 32px, var(--max));
-    height: 68px;
+    height: 72px;
   }
 
-  .brand,
+  .brand {
+    height: 72px;
+    max-width: calc(100vw - 92px);
+  }
+
   .brand img {
-    width: 150px;
+    width: auto;
+    height: 72px;
   }
 
   .menu-button {
@@ -548,7 +557,7 @@ li {
 
   .site-nav {
     position: fixed;
-    inset: 68px 0 auto;
+    inset: 72px 0 auto;
     display: grid;
     gap: 0;
     padding: 10px 24px 20px;
