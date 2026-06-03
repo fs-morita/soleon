@@ -653,6 +653,7 @@ li {
   }
 
   .service-card h3,
+  .service-card h3.single-line,
   .service-card.prototype h3.single-line {
     font-size: 24px;
   }
@@ -696,6 +697,7 @@ li {
   }
 
   .service-card h3,
+  .service-card h3.single-line,
   .service-card.prototype h3.single-line {
     font-size: clamp(16px, 4.8vw, 20px);
   }
