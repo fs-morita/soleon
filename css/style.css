@@ -125,6 +125,7 @@ a {
 }
 
 .menu-button {
+  position: relative;
   display: none;
   width: 44px;
   height: 44px;
@@ -135,24 +136,42 @@ a {
 }
 
 .menu-button span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   display: block;
   width: 24px;
   height: 2px;
-  margin: 5px auto;
+  margin: 0;
   background: var(--ink);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menu-button span:nth-child(1) {
+  transform: translate(-50%, calc(-50% - 7px));
+}
+
+.menu-button span:nth-child(2) {
+  transform-origin: right center;
+}
+
+.menu-button span:nth-child(3) {
+  transform: translate(-50%, calc(-50% + 7px));
 }
 
 .menu-button[aria-expanded="true"] span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .menu-button[aria-expanded="true"] span:nth-child(2) {
-  opacity: 0;
+  transform: translate(-50%, -50%) scaleX(0);
 }
 
 .menu-button[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .hero {
