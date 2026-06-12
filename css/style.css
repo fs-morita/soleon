@@ -965,9 +965,10 @@ li {
   }
 
   .soleon-stack {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, max-content);
+    gap: 16px;
     justify-items: start;
-    font-size: 64px;
+    justify-content: start;
   }
 
   .soleon-stack span,
@@ -976,9 +977,17 @@ li {
     grid-row: auto;
   }
 
+  .soleon-stack span:nth-child(n),
+  .concept-list div:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .soleon-stack span {
     justify-self: start;
     min-height: auto;
+    font-size: 64px;
+    line-height: 1;
   }
 
   .concept-list {
@@ -1092,6 +1101,14 @@ li {
     font-size: 13px;
   }
 
+  .soleon-stack {
+    gap: 12px;
+  }
+
+  .soleon-stack span {
+    font-size: 46px;
+  }
+
   .hero-copy {
     margin-top: 24px;
     font-size: 24px;
@@ -1177,6 +1194,14 @@ li {
 
   .hero-copy {
     font-size: 22px;
+  }
+
+  .soleon-stack {
+    gap: 10px;
+  }
+
+  .soleon-stack span {
+    font-size: 42px;
   }
 
   .service-card h3,
