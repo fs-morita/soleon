@@ -73,4 +73,73 @@
       observer.observe(target);
     });
   }
+
+  const contactForm = document.querySelector("[data-contact-form]");
+
+  function setFormStatus(form, message, type) {
+    const status = form.querySelector("[data-form-status]");
+    if (!status) return;
+    status.textContent = message;
+    status.classList.remove("is-success", "is-error");
+    if (type) {
+      status.classList.add(type);
+    }
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      const submitButton = contactForm.querySelector("button[type='submit']");
+      const formData = new FormData(contactForm);
+      const email = formData.get("email");
+      const endpoint = [
+        "https://formsubmit.co/ajax/",
+        contactForm.dataset.contactUser,
+        "@",
+        contactForm.dataset.contactDomain,
+        ".",
+        contactForm.dataset.contactTld,
+      ].join("");
+
+      if (typeof email === "string") {
+        formData.set("_replyto", email);
+      }
+
+      setFormStatus(contactForm, "送信中です。", "");
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+
+      fetch(endpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Form submission failed");
+          }
+          return response.json();
+        })
+        .then(function () {
+          contactForm.reset();
+          setFormStatus(contactForm, "送信しました。内容を確認のうえご連絡します。", "is-success");
+        })
+        .catch(function () {
+          setFormStatus(contactForm, "送信できませんでした。時間をおいて再度お試しください。", "is-error");
+        })
+        .finally(function () {
+          if (submitButton) {
+            submitButton.disabled = false;
+          }
+        });
+    });
+  }
 })();

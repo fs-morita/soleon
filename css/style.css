@@ -289,6 +289,11 @@ h1 {
   text-shadow: 0 14px 34px rgba(8, 9, 13, 0.08);
 }
 
+#hero-title {
+  font-family: "Audiowide", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+}
+
 h1 .accent,
 h2 .accent,
 .pink {
@@ -305,6 +310,7 @@ h2 .accent,
 
 .hero-copy {
   margin: 34px 0 6px;
+  font-family: "Orbitron", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
   font-size: 42px;
   font-weight: 900;
   line-height: 1.34;
@@ -780,7 +786,9 @@ li {
 
 .contact-inner {
   display: grid;
-  gap: 22px;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1fr);
+  gap: 72px;
+  align-items: start;
 }
 
 .contact-section p:not(.eyebrow) {
@@ -789,6 +797,135 @@ li {
   color: rgba(255, 255, 255, 0.72);
   font-size: 18px;
   line-height: 1.85;
+}
+
+.contact-copy {
+  display: grid;
+  gap: 22px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 18px;
+  padding: 34px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field span {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 54px;
+  padding: 13px 15px;
+  color: var(--paper);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  font: inherit;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+  min-height: 168px;
+  resize: vertical;
+}
+
+.form-field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.72) 50%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) 23px,
+    calc(100% - 14px) 23px;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.form-field select option {
+  color: var(--ink);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(236, 63, 150, 0.78);
+  box-shadow: 0 0 0 4px rgba(236, 63, 150, 0.16);
+}
+
+.hidden-field {
+  display: none;
+}
+
+.form-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 26px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 950;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.submit-button:hover {
+  box-shadow: 0 16px 34px rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+  transform: none;
+}
+
+.contact-section .form-status {
+  min-height: 1.6em;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.contact-section .form-status.is-success {
+  color: #96e52a;
+}
+
+.contact-section .form-status.is-error {
+  color: #ff8fbe;
 }
 
 .site-footer {
@@ -939,7 +1076,8 @@ li {
   .intro-grid,
   .company-grid,
   .concept-grid,
-  .service-grid {
+  .service-grid,
+  .contact-inner {
     grid-template-columns: 1fr;
   }
 
@@ -1064,6 +1202,14 @@ li {
     grid-template-columns: 1fr;
     gap: 8px;
   }
+
+  .contact-inner {
+    gap: 40px;
+  }
+
+  .contact-form {
+    padding: 28px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1085,6 +1231,10 @@ li {
     font-size: 72px;
   }
 
+  #hero-title {
+    font-size: clamp(48px, 15vw, 72px);
+  }
+
   h2 {
     font-size: 34px;
     line-height: 1.24;
@@ -1099,6 +1249,18 @@ li {
   .service-summary,
   .service-card.prototype .service-summary.single-line {
     font-size: 13px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 22px;
+  }
+
+  .form-actions {
+    gap: 12px;
   }
 
   .soleon-stack {

@@ -14,6 +14,9 @@
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="preload" href="img/hero-soleon.png" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&amp;family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,7 +25,7 @@
   <header class="site-header" data-header>
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="SOLEON トップへ">
-        <img src="img/logo.png" alt="SOLEON 製造業のための、社外戦略室。">
+        <img src="img/logo_transparent.svg" alt="SOLEON 製造業のための、社外戦略室。">
       </a>
 
       <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav" data-menu-button>
@@ -280,12 +283,48 @@
 
     <section class="section contact-section" id="contact" aria-labelledby="contact-title">
       <div class="section-inner contact-inner">
-        <p class="eyebrow">お問い合わせ</p>
-        <h2 id="contact-title">
-          <span class="line">お問い合わせ窓口は</span>
-          <span class="line">準備中です。</span>
-        </h2>
-        <p>問い合わせ窓口と詳細情報を順次公開します。</p>
+        <div class="contact-copy">
+          <p class="eyebrow">お問い合わせ</p>
+          <h2 id="contact-title">
+            <span class="line">まずは課題を、</span>
+            <span class="line">お聞かせください。</span>
+          </h2>
+          <p>社内IT・情報システム支援、業務効率化、AI活用、試作支援など、検討段階のご相談からお送りいただけます。</p>
+        </div>
+
+        <form class="contact-form" data-contact-form data-contact-user="morita_daisuke" data-contact-domain="soleon" data-contact-tld="jp">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden-field">
+          <input type="hidden" name="_subject" value="SOLEONサイトからお問い合わせ">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+
+          <div class="form-grid">
+            <label class="form-field">
+              <span>会社名</span>
+              <input type="text" name="company" autocomplete="organization">
+            </label>
+
+            <label class="form-field">
+              <span>お名前</span>
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+          </div>
+
+          <label class="form-field">
+            <span>返信用メールアドレス</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+
+          <label class="form-field">
+            <span>お問い合わせ内容</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-button">送信する</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </div>
     </section>
   </main>
