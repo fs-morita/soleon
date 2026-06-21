@@ -8,188 +8,170 @@
   <title>会社案内一覧</title>
   <meta name="description" content="地域のものづくり企業をまとめた会社案内ページ一覧です。">
   <link rel="icon" href="../img/favicon.png" type="image/png">
-  <link rel="preload" href="assets/manufacturing-hero.png" as="image">
   <link rel="stylesheet" href="assets/proposal.css">
 </head>
-<body class="index-page">
+<body class="directory-page">
   <header class="site-header">
-    <a class="brand" href="./" aria-label="会社案内一覧">Company Directory</a>
+    <a class="brand" href="./" aria-label="会社案内一覧">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Company Directory</span>
+    </a>
     <nav class="site-nav" aria-label="ページ内ナビゲーション">
       <a href="#companies">会社一覧</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero index-hero">
-      <img class="hero-image" src="assets/manufacturing-hero.png" alt="" aria-hidden="true">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Company Directory</p>
-        <h1>会社ページ一覧</h1>
-        <p class="hero-copy">地域のものづくり企業の会社案内を一覧できます。</p>
-        <div class="hero-meta">
-          <span>19社</span>
-          <span>神戸市長田区・神戸市西区エリア</span>
+    <section class="hero directory-hero">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy-block">
+          <p class="eyebrow">Company Directory</p>
+          <h1>会社ページ一覧</h1>
+          <p class="hero-lead">地域のものづくり企業の会社案内を一覧できます。</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#companies">一覧を見る</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="一覧サマリー">
+          <div class="spec-card spec-card-main">
+            <span class="spec-label">Companies</span>
+            <strong>19社</strong>
+            <p>神戸市長田区・神戸市西区エリア</p>
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Purpose</span>
+            <strong>Manufacturing LP</strong>
+            <p>BtoB製造業向けの会社案内ページです。</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section proposal-list-section" id="companies">
+    <section class="section directory-list" id="companies">
       <div class="section-inner">
-        <p class="eyebrow">Companies</p>
-        <div class="proposal-grid">
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./1140005003289/">
-            <span class="proposal-card-kicker">神戸市長田区 / プラスチック成形</span>
-            <h2>樹脂成型協同組合</h2>
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">Companies</p>
+            <h2>生成ページ</h2>
+          </div>
+          <p>法人番号ごとに生成された会社案内ページへ移動できます。</p>
+        </div>
+        <div class="directory-grid">
+          <a class="directory-card" href="./1140005003289/">
+            <span class="eyebrow">神戸市長田区 / プラスチック成形</span>
+            <h3>樹脂成型協同組合</h3>
             <p>兵庫県神戸市長田区日吉町４丁目１番１号（日吉ビル）</p>
-            <span class="proposal-card-number">法人番号 1140005003289</span>
+            <span class="directory-card-number">法人番号 1140005003289</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./2140002008934/">
-            <span class="proposal-card-kicker">神戸市長田区 / プラスチック成形</span>
-            <h2>東洋樹脂有限会社</h2>
+          <a class="directory-card" href="./2140002008934/">
+            <span class="eyebrow">神戸市長田区 / プラスチック成形</span>
+            <h3>東洋樹脂有限会社</h3>
             <p>兵庫県神戸市長田区東尻池町２丁目２１番１号</p>
-            <span class="proposal-card-number">法人番号 2140002008934</span>
+            <span class="directory-card-number">法人番号 2140002008934</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./3140001016763/">
-            <span class="proposal-card-kicker">神戸市長田区 / プラスチック成形</span>
-            <h2>フジ樹脂興業株式会社</h2>
+          <a class="directory-card" href="./3140001016763/">
+            <span class="eyebrow">神戸市長田区 / プラスチック成形</span>
+            <h3>フジ樹脂興業株式会社</h3>
             <p>兵庫県神戸市長田区海運町５丁目１番３６号</p>
-            <span class="proposal-card-number">法人番号 3140001016763</span>
+            <span class="directory-card-number">法人番号 3140001016763</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./1140001031236/">
-            <span class="proposal-card-kicker">神戸市長田区 / 樹脂加工</span>
-            <h2>株式会社上別府加工所</h2>
+          <a class="directory-card" href="./1140001031236/">
+            <span class="eyebrow">神戸市長田区 / 樹脂加工</span>
+            <h3>株式会社上別府加工所</h3>
             <p>兵庫県神戸市長田区水笠通１丁目４番５号</p>
-            <span class="proposal-card-number">法人番号 1140001031236</span>
+            <span class="directory-card-number">法人番号 1140001031236</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./1140003003489/">
-            <span class="proposal-card-kicker">神戸市長田区 / 樹脂加工</span>
-            <h2>前川食品加工合資会社</h2>
+          <a class="directory-card" href="./1140003003489/">
+            <span class="eyebrow">神戸市長田区 / 樹脂加工</span>
+            <h3>前川食品加工合資会社</h3>
             <p>兵庫県神戸市長田区川西通４丁目１０２番地の３</p>
-            <span class="proposal-card-number">法人番号 1140003003489</span>
+            <span class="directory-card-number">法人番号 1140003003489</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./3140003003413/">
-            <span class="proposal-card-kicker">神戸市長田区 / 樹脂加工</span>
-            <h2>合資会社平尾竹材加工所</h2>
+          <a class="directory-card" href="./3140003003413/">
+            <span class="eyebrow">神戸市長田区 / 樹脂加工</span>
+            <h3>合資会社平尾竹材加工所</h3>
             <p>兵庫県神戸市長田区（神戸市東尻池町三丁目２１番屋敷ノ２）</p>
-            <span class="proposal-card-number">法人番号 3140003003413</span>
+            <span class="directory-card-number">法人番号 3140003003413</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./4140002009063/">
-            <span class="proposal-card-kicker">神戸市長田区 / 樹脂加工</span>
-            <h2>有限会社服部プレス加工所</h2>
+          <a class="directory-card" href="./4140002009063/">
+            <span class="eyebrow">神戸市長田区 / 樹脂加工</span>
+            <h3>有限会社服部プレス加工所</h3>
             <p>兵庫県神戸市長田区川西通２丁目１０</p>
-            <span class="proposal-card-number">法人番号 4140002009063</span>
+            <span class="directory-card-number">法人番号 4140002009063</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./5140003003551/">
-            <span class="proposal-card-kicker">神戸市長田区 / 樹脂加工</span>
-            <h2>聨成ゴム加工合資会社</h2>
+          <a class="directory-card" href="./5140003003551/">
+            <span class="eyebrow">神戸市長田区 / 樹脂加工</span>
+            <h3>聨成ゴム加工合資会社</h3>
             <p>兵庫県神戸市長田区庄田町１丁目７番地</p>
-            <span class="proposal-card-number">法人番号 5140003003551</span>
+            <span class="directory-card-number">法人番号 5140003003551</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./8140002008169/">
-            <span class="proposal-card-kicker">神戸市長田区 / 樹脂加工</span>
-            <h2>有限会社イヅツ加工</h2>
+          <a class="directory-card" href="./8140002008169/">
+            <span class="eyebrow">神戸市長田区 / 樹脂加工</span>
+            <h3>有限会社イヅツ加工</h3>
             <p>兵庫県神戸市長田区神楽町２丁目２番２０号</p>
-            <span class="proposal-card-number">法人番号 8140002008169</span>
+            <span class="directory-card-number">法人番号 8140002008169</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./8140002008499/">
-            <span class="proposal-card-kicker">神戸市長田区 / 樹脂加工</span>
-            <h2>有限会社光照加工</h2>
+          <a class="directory-card" href="./8140002008499/">
+            <span class="eyebrow">神戸市長田区 / 樹脂加工</span>
+            <h3>有限会社光照加工</h3>
             <p>兵庫県神戸市長田区細田町２丁目１番５号</p>
-            <span class="proposal-card-number">法人番号 8140002008499</span>
+            <span class="directory-card-number">法人番号 8140002008499</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./9140001105180/">
-            <span class="proposal-card-kicker">神戸市長田区 / 樹脂加工</span>
-            <h2>株式会社松野加工</h2>
+          <a class="directory-card" href="./9140001105180/">
+            <span class="eyebrow">神戸市長田区 / 樹脂加工</span>
+            <h3>株式会社松野加工</h3>
             <p>兵庫県神戸市長田区神楽町３丁目４番１０号</p>
-            <span class="proposal-card-number">法人番号 9140001105180</span>
+            <span class="directory-card-number">法人番号 9140001105180</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./4140001004585/">
-            <span class="proposal-card-kicker">神戸市西区 / プラスチック成形</span>
-            <h2>株式会社関西樹脂</h2>
+          <a class="directory-card" href="./4140001004585/">
+            <span class="eyebrow">神戸市西区 / プラスチック成形</span>
+            <h3>株式会社関西樹脂</h3>
             <p>兵庫県神戸市西区森友４丁目３４番地</p>
-            <span class="proposal-card-number">法人番号 4140001004585</span>
+            <span class="directory-card-number">法人番号 4140001004585</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./4140001004965/">
-            <span class="proposal-card-kicker">神戸市西区 / プラスチック成形</span>
-            <h2>積星プラスチック工業株式会社</h2>
+          <a class="directory-card" href="./4140001004965/">
+            <span class="eyebrow">神戸市西区 / プラスチック成形</span>
+            <h3>積星プラスチック工業株式会社</h3>
             <p>兵庫県神戸市西区岩岡町古郷字福吉１５２８番の１</p>
-            <span class="proposal-card-number">法人番号 4140001004965</span>
+            <span class="directory-card-number">法人番号 4140001004965</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./6140002005226/">
-            <span class="proposal-card-kicker">神戸市西区 / プラスチック成形</span>
-            <h2>有限会社誠樹脂工業所</h2>
+          <a class="directory-card" href="./6140002005226/">
+            <span class="eyebrow">神戸市西区 / プラスチック成形</span>
+            <h3>有限会社誠樹脂工業所</h3>
             <p>兵庫県神戸市西区小山２丁目１番２号</p>
-            <span class="proposal-card-number">法人番号 6140002005226</span>
+            <span class="directory-card-number">法人番号 6140002005226</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./8140002005273/">
-            <span class="proposal-card-kicker">神戸市西区 / プラスチック成形</span>
-            <h2>株式会社三木樹脂工業</h2>
+          <a class="directory-card" href="./8140002005273/">
+            <span class="eyebrow">神戸市西区 / プラスチック成形</span>
+            <h3>株式会社三木樹脂工業</h3>
             <p>兵庫県神戸市西区神出町南４４７－１</p>
-            <span class="proposal-card-number">法人番号 8140002005273</span>
+            <span class="directory-card-number">法人番号 8140002005273</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./1140002005370/">
-            <span class="proposal-card-kicker">神戸市西区 / 樹脂加工</span>
-            <h2>有限会社山田加工</h2>
+          <a class="directory-card" href="./1140002005370/">
+            <span class="eyebrow">神戸市西区 / 樹脂加工</span>
+            <h3>有限会社山田加工</h3>
             <p>兵庫県神戸市西区岩岡町岩岡１６４番地の３</p>
-            <span class="proposal-card-number">法人番号 1140002005370</span>
+            <span class="directory-card-number">法人番号 1140002005370</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./1140005026587/">
-            <span class="proposal-card-kicker">神戸市西区 / 樹脂加工</span>
-            <h2>一般社団法人日本有機加工食品コンソーシアム</h2>
+          <a class="directory-card" href="./1140005026587/">
+            <span class="eyebrow">神戸市西区 / 樹脂加工</span>
+            <h3>一般社団法人日本有機加工食品コンソーシアム</h3>
             <p>兵庫県神戸市西区見津が丘３丁目８番５</p>
-            <span class="proposal-card-number">法人番号 1140005026587</span>
+            <span class="directory-card-number">法人番号 1140005026587</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./5140002004856/">
-            <span class="proposal-card-kicker">神戸市西区 / 樹脂加工</span>
-            <h2>有限会社田中加工所</h2>
+          <a class="directory-card" href="./5140002004856/">
+            <span class="eyebrow">神戸市西区 / 樹脂加工</span>
+            <h3>有限会社田中加工所</h3>
             <p>兵庫県神戸市西区伊川谷町前開４３３番地の１</p>
-            <span class="proposal-card-number">法人番号 5140002004856</span>
+            <span class="directory-card-number">法人番号 5140002004856</span>
           </a>
-        </article>
-        <article class="proposal-card">
-          <a class="proposal-card-link" href="./8140001142729/">
-            <span class="proposal-card-kicker">神戸市西区 / 樹脂加工</span>
-            <h2>株式会社坂本加工</h2>
+          <a class="directory-card" href="./8140001142729/">
+            <span class="eyebrow">神戸市西区 / 樹脂加工</span>
+            <h3>株式会社坂本加工</h3>
             <p>兵庫県神戸市西区玉津町新方２６１－４</p>
-            <span class="proposal-card-number">法人番号 8140001142729</span>
+            <span class="directory-card-number">法人番号 8140001142729</span>
           </a>
-        </article>
         </div>
       </div>
     </section>
