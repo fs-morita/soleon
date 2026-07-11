@@ -462,13 +462,15 @@ li {
   grid-row: 4;
 }
 
-.soleon-stack span:nth-child(5),
-.concept-list div:nth-child(5) {
+.soleon-stack span:nth-child(5) {
   grid-row: 5;
 }
 
-.soleon-stack span:nth-child(6),
-.concept-list div:nth-child(6) {
+.concept-list div:nth-child(5) {
+  grid-row: 5 / span 2;
+}
+
+.soleon-stack span:nth-child(6) {
   grid-row: 6;
 }
 
