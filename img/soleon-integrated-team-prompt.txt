@@ -1,0 +1,50 @@
+SOLEON integrated manufacturing team — image generation prompt
+
+Use case: stylized-concept
+Asset type: wide website section illustration for the SOLEON corporate homepage
+
+Primary request:
+Create one continuous architectural cutaway illustration of a realistic Japanese small-to-medium manufacturing company. The image must communicate that management, IT, design, and process-improvement specialists have naturally joined the manufacturer's internal organization. It must not look like a factory connected to a separate external IT vendor.
+
+Scene and composition:
+- Use a wide landscape canvas matching an approximately 1.82:1 aspect ratio.
+- Show one continuous building and one organization, with a shared floor, shared walls, consistent ceiling structure, consistent daylight, and no large empty gap between the two areas.
+- The left approximately 60% is a bright, organized manufacturing workshop.
+- The right approximately 40% is an internal strategy and support team area that is visibly part of the same building.
+- Connect the areas gently through the continuous floor, architecture, daylight, and one very thin restrained magenta line integrated into the floor or wall. The line must feel like an architectural accent, never like a cable or data connector.
+
+Left area — manufacturing floor:
+- Depict a believable Japanese SME workshop, not a giant automated plant.
+- Include two compact CNC machine tools, a practical workbench, a few finished machined products or components, storage, and only a small number of workers in ordinary clean workwear.
+- Keep the workshop bright and tidy with white, pale gray, and charcoal surfaces.
+- Avoid a fully unmanned factory, excessive robots, excessive machinery, dark black surfaces, and futuristic smart-factory styling.
+
+Right area — internal strategy and support team:
+- Show two or three people naturally collaborating in the same company: one person reviewing a CAD drawing, one organizing a process or workflow, and one participating in a small discussion.
+- Show normal desks, papers, a whiteboard or pinboard, and a few PC screens with abstract technical drawings, a production schedule, and a simple workflow. No legible interface text.
+- Make this feel like a manufacturer's internal strategy room supporting management, IT, design, and operational improvement.
+- Do not make it look like a separate IT company, a server room, a startup office, or a network operations center.
+- Server racks, network diagrams, and flashy analytics displays must not be the visual focus.
+
+Style and finish:
+- Sophisticated high-end architectural perspective combined with refined industrial editorial illustration.
+- A gentle isometric or three-quarter axonometric view is acceptable, but it must not resemble a game screen or game asset.
+- Combine precise linework with subtle pale dimensional shading.
+- Polished enough for a premium corporate brand site; mature, restrained, spacious, and credible.
+- Not photorealistic and not child-oriented.
+
+Color palette:
+- Background: pale warm ivory that blends with #f3f1ec.
+- Main colors: white, pale gray, warm light gray, and charcoal.
+- Accent: SOLEON magenta #dc0278, limited to approximately 5% of the image.
+- Minimize yellow-and-black safety colors.
+- No harsh shadows, glossy reflections, neon, or glow effects.
+
+Constraints:
+- Illustration only, with no embedded words, headings, explanations, labels, symbols, check marks, or logos.
+- No outer hexagonal frame or house-shaped frame.
+- Keep important people, CNC machines, workbench, and collaboration scene large enough to remain readable when displayed around 550 pixels wide.
+- Maintain a continuous shared-space composition so the two areas clearly belong to the same manufacturing company.
+
+Negative prompt:
+text, labels, icons, infographic, arrows, cables, connectors, glowing lines, futuristic smart factory, dark factory, cyberpunk, server room as main subject, network diagram, hexagonal frame, house-shaped frame, excessive machinery, excessive magenta, warning stripes, cartoon style, game asset style, separate companies, separate buildings, large central gap, external IT vendor, startup office, giant automated factory, fully unmanned factory, glossy 3D, neon, watermark, logo

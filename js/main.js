@@ -1,76 +1,187 @@
 (function () {
-  document.documentElement.classList.add("js");
-
+  const root = document.documentElement;
   const header = document.querySelector("[data-header]");
   const menuButton = document.querySelector("[data-menu-button]");
   const nav = document.querySelector("[data-nav]");
-  const revealTargets = document.querySelectorAll(
-    ".intro-section .section-inner, .service-hero .section-inner, .service-card, .concept-section .eyebrow, .concept-section h2, .concept-list div, .company-section .section-inner, .contact-section .section-inner"
-  );
+  const hero = document.querySelector(".hero");
+  const heroVisual = document.querySelector("[data-hero-visual]");
+  const mobileBreakpoint = 1040;
+
+  root.classList.add("js");
 
   function updateHeader() {
     if (!header) return;
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
   }
 
-  function closeMenu() {
-    if (!menuButton || !nav) return;
-    menuButton.setAttribute("aria-expanded", "false");
-    nav.classList.remove("is-open");
-  }
-
+  let scrollTicking = false;
   updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      window.requestAnimationFrame(function () {
+        updateHeader();
+        scrollTicking = false;
+      });
+    },
+    { passive: true }
+  );
+
+  function setMenu(open, returnFocus) {
+    if (!menuButton || !nav) return;
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+    nav.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
+
+    const label = menuButton.querySelector(".menu-label");
+    if (label) {
+      label.textContent = open ? "CLOSE" : "MENU";
+    }
+
+    if (!open && returnFocus) {
+      menuButton.focus();
+    }
+  }
 
   if (menuButton && nav) {
     menuButton.addEventListener("click", function () {
       const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", String(!isOpen));
-      nav.classList.toggle("is-open", !isOpen);
+      setMenu(!isOpen, false);
     });
 
     nav.addEventListener("click", function (event) {
-      if (event.target instanceof HTMLAnchorElement) {
-        closeMenu();
+      if (event.target.closest("a")) {
+        setMenu(false, false);
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      if (menuButton.getAttribute("aria-expanded") === "true") {
+        setMenu(false, true);
+      }
+    });
+
+    document.addEventListener("pointerdown", function (event) {
+      if (menuButton.getAttribute("aria-expanded") !== "true") return;
+      if (header && !header.contains(event.target)) {
+        setMenu(false, false);
       }
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 900) {
-        closeMenu();
+      if (window.innerWidth > mobileBreakpoint) {
+        setMenu(false, false);
       }
+    });
+
+  }
+
+  if (hero) {
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        hero.classList.add("is-ready");
+      });
     });
   }
 
-  if (revealTargets.length) {
-    revealTargets.forEach(function (target, index) {
-      target.classList.add("reveal");
-      target.style.setProperty("--reveal-delay", (index % 4) * 70 + "ms");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  if (heroVisual && finePointer.matches && !reduceMotion.matches) {
+    heroVisual.addEventListener("pointermove", function (event) {
+      const bounds = heroVisual.getBoundingClientRect();
+      const relativeX = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const relativeY = (event.clientY - bounds.top) / bounds.height - 0.5;
+      heroVisual.style.setProperty("--shift-x", relativeX * -10 + "px");
+      heroVisual.style.setProperty("--shift-y", relativeY * -10 + "px");
     });
 
-    if (!("IntersectionObserver" in window)) {
-      revealTargets.forEach(function (target) {
-        target.classList.add("is-visible");
-      });
-      return;
-    }
+    heroVisual.addEventListener("pointerleave", function () {
+      heroVisual.style.setProperty("--shift-x", "0px");
+      heroVisual.style.setProperty("--shift-y", "0px");
+    });
+  }
 
-    const observer = new IntersectionObserver(
+  const revealTargets = document.querySelectorAll("[data-reveal]");
+
+  revealTargets.forEach(function (target, index) {
+    target.style.setProperty("--reveal-delay", (index % 3) * 65 + "ms");
+  });
+
+  if (!("IntersectionObserver" in window) || reduceMotion.matches) {
+    revealTargets.forEach(function (target) {
+      target.classList.add("is-visible");
+    });
+  } else {
+    const revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
           entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         });
       },
       {
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.12,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.1,
       }
     );
 
     revealTargets.forEach(function (target) {
-      observer.observe(target);
+      revealObserver.observe(target);
+    });
+  }
+
+  if (nav && "IntersectionObserver" in window) {
+    const navLinks = Array.from(nav.querySelectorAll("a[href^='#']"));
+    const observedSections = navLinks
+      .map(function (link) {
+        return document.querySelector(link.getAttribute("href"));
+      })
+      .filter(Boolean);
+
+    if (hero) {
+      observedSections.unshift(hero);
+    }
+
+    function markCurrent(id) {
+      navLinks.forEach(function (link) {
+        const current = link.getAttribute("href") === "#" + id;
+        link.classList.toggle("is-current", current);
+        if (current) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    const sectionObserver = new IntersectionObserver(
+      function (entries) {
+        const visible = entries
+          .filter(function (entry) {
+            return entry.isIntersecting;
+          })
+          .sort(function (a, b) {
+            return b.intersectionRatio - a.intersectionRatio;
+          });
+
+        if (visible[0]) {
+          markCurrent(visible[0].target.id);
+        }
+      },
+      {
+        rootMargin: "-32% 0px -52% 0px",
+        threshold: [0, 0.15, 0.4],
+      }
+    );
+
+    observedSections.forEach(function (section) {
+      sectionObserver.observe(section);
     });
   }
 
@@ -95,6 +206,7 @@
       }
 
       const submitButton = contactForm.querySelector("button[type='submit']");
+      const submitLabel = submitButton ? submitButton.querySelector("span") : null;
       const formData = new FormData(contactForm);
       const email = formData.get("email");
       const endpoint = [
@@ -113,6 +225,9 @@
       setFormStatus(contactForm, "送信中です。", "");
       if (submitButton) {
         submitButton.disabled = true;
+      }
+      if (submitLabel) {
+        submitLabel.textContent = "送信中…";
       }
 
       fetch(endpoint, {
@@ -138,6 +253,9 @@
         .finally(function () {
           if (submitButton) {
             submitButton.disabled = false;
+          }
+          if (submitLabel) {
+            submitLabel.textContent = "送信する";
           }
         });
     });
