@@ -1079,7 +1079,8 @@ h2 {
 
 .capability-list {
   display: grid;
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  /* 項目数に依らず等間隔（社外CFO/情シス代行は6項目） */
+  grid-auto-rows: minmax(0, 1fr);
   margin: 0;
   padding: 0;
   list-style: none;
