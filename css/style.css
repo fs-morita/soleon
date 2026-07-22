@@ -1123,6 +1123,75 @@ h2 {
   line-height: 1.8;
 }
 
+.capability-list p a {
+  color: var(--magenta-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* 相互リンク: 活用事例（LP）紹介セクション — ライト背景 */
+.usecase-layout {
+  display: grid;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .usecase-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+.usecase-copy h2 {
+  margin: 0 0 24px;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 650;
+  line-height: 1.42;
+  letter-spacing: -0.03em;
+}
+.usecase-copy h2 span {
+  color: var(--magenta);
+}
+.usecase-copy > p {
+  max-width: 460px;
+  margin: 0 0 32px;
+  color: rgba(11, 13, 15, 0.62);
+  font-size: 15px;
+  line-height: 1.9;
+}
+.usecase-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.usecase-list li {
+  border-bottom: 1px solid var(--line);
+}
+.usecase-list a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 6px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+  transition: padding 0.3s var(--ease), color 0.2s ease;
+}
+.usecase-list a:hover {
+  padding-left: 14px;
+  color: var(--magenta);
+}
+.usecase-tag {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--magenta);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
 .delivery-flow {
   display: grid;
   grid-template-columns: minmax(290px, 0.72fr) minmax(0, 1.28fr);
@@ -1771,6 +1840,50 @@ h2 {
   gap: 10px;
   min-height: 44px;
   color: var(--white);
+}
+
+/* フッター2段目: 関連リンク＋連絡先（相互リンク・連絡先統一） */
+.footer-secondary {
+  width: min(calc(100% - (var(--gutter) * 2)), var(--max));
+  margin: 0 auto;
+  padding: 22px 0 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 34px;
+  flex-wrap: wrap;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 600;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.footer-links a:hover {
+  color: var(--white);
+}
+.footer-contact {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+.footer-contact a {
+  color: var(--white);
+}
+.footer-contact span {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .footer-inner > div a:hover,
