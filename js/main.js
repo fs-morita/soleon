@@ -222,6 +222,19 @@
         formData.set("_replyto", email);
       }
 
+      if (contactForm.dataset.contactCcUser) {
+        formData.set(
+          "_cc",
+          [
+            contactForm.dataset.contactCcUser,
+            "@",
+            contactForm.dataset.contactDomain,
+            ".",
+            contactForm.dataset.contactTld,
+          ].join("")
+        );
+      }
+
       setFormStatus(contactForm, "送信中です。", "");
       if (submitButton) {
         submitButton.disabled = true;
