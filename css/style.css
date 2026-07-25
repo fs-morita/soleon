@@ -2301,10 +2301,18 @@ h2 {
     margin-top: 34px;
   }
 
+  /* 全幅ボタンは space-between だとラベルが左端に張り付くため中央寄せにする */
   .button {
     width: 100%;
     min-width: 0;
     min-height: 58px;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .submit-button {
+    justify-content: center;
+    gap: 10px;
   }
 
   .hero-visual {
