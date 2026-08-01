@@ -6,17 +6,18 @@
   <title>株式会社SOLEON | 製造業のための、社外戦略室。</title>
   <meta name="description" content="株式会社SOLEONは、製造業のための社外戦略室として、社内IT・情報システム支援、業務効率化支援、試作支援サブスクリプションを展開します。">
   <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0b0d0f">
   <meta property="og:title" content="株式会社SOLEON">
   <meta property="og:description" content="製造業のための、社外戦略室。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="img/hero-soleon.png">
+  <meta property="og:image" content="img/hero-poster.webp">
   <link rel="icon" href="img/favicon.ico" sizes="any">
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <link rel="preload" href="img/hero-soleon.png" as="image">
+  <link rel="preload" href="img/hero-poster.webp" as="image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;family=Noto+Sans+JP:wght@400..900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Noto+Sans+JP:wght@100..900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-055V7YHC94"></script>
   <script>
@@ -29,257 +30,276 @@
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
 
-  <header class="site-header" data-header>
+  <div class="progress" aria-hidden="true"><i data-progress></i></div>
+
+  <header class="header" data-header>
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="SOLEON トップへ">
-        <img src="img/logo_transparent.svg" width="4096" height="1084" alt="SOLEON 製造業のための、社外戦略室。">
+        <img src="img/logo-dark.svg" width="4096" height="1084" alt="SOLEON 製造業のための、社外戦略室。">
       </a>
 
-      <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav" data-menu-button>
-        <span class="menu-label" aria-hidden="true">MENU</span>
-        <span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+        <span class="menu-toggle-label" aria-hidden="true">MENU</span>
+        <span class="menu-toggle-bars" aria-hidden="true"><i></i><i></i></span>
       </button>
 
-      <nav class="site-nav" id="site-nav" aria-label="サイト内ナビゲーション" data-nav>
+      <nav class="nav" id="site-nav" aria-label="サイト内ナビゲーション" data-nav>
         <a href="#about"><span>01</span> SOLEONとは</a>
         <a href="#service"><span>02</span> 事業紹介</a>
         <a href="#concept"><span>03</span> 社名の由来</a>
         <a href="#company"><span>04</span> 会社概要</a>
         <a href="https://claudecode.soleon.jp/"><span>05</span> 活用事例</a>
-        <a class="nav-contact" href="#contact">お問い合わせ <span aria-hidden="true">↗</span></a>
+        <a class="nav-cta" href="#contact">お問い合わせ <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
 
-      <div class="hero-inner">
-        <div class="hero-content">
-          <p class="hero-kicker" data-hero-reveal>
-            <span class="status-dot" aria-hidden="true"></span>
-            Strategic Outside Lab for Efficient Operations
-          </p>
-          <h1 id="hero-title" data-hero-reveal>
-            <span>製造業のための、</span>
-            <span>社外戦略室<span class="hero-period">。</span></span>
-          </h1>
-          <p class="hero-lead" data-hero-reveal>
-            経営と現場のあいだに入り、IT・AI活用から業務改善、<br>
-            試作開発まで。必要な社内機能を、社外から。
-          </p>
-          <div class="hero-actions" data-hero-reveal>
-            <a class="button button-primary" href="#contact">
-              <span>課題を相談する</span><span class="button-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a class="button button-secondary" href="#service">
-              <span>事業を見る</span><span class="button-arrow" aria-hidden="true">↓</span>
-            </a>
+    <!-- 01から問い合わせまでを貫く一本の線。中身はJSがDOMを実測して生成する -->
+    <div class="spine" data-spine aria-hidden="true"></div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero pin" id="top" aria-labelledby="hero-title" data-hero>
+      <div class="pin-stage hero-stage">
+        <div class="hero-media" aria-hidden="true" data-hero-media>
+          <!-- 常時再生の4カット。active だけ表示し、タイマーとスクロールで切り替わる -->
+          <img class="hero-poster" src="img/hero-poster.webp" width="1440" height="810" alt="" fetchpriority="high" decoding="async" data-hero-poster>
+          <div class="hero-videos" data-hero-videos>
+            <video muted loop playsinline preload="none" data-cut="video/hero-01.mp4"></video>
+            <video muted loop playsinline preload="none" data-cut="video/hero-02.mp4"></video>
+            <video muted loop playsinline preload="none" data-cut="video/hero-03.mp4"></video>
+            <video muted loop playsinline preload="none" data-cut="video/hero-04.mp4"></video>
+          </div>
+
+          <canvas class="hero-dust" data-hero-dust></canvas>
+
+          <!-- 走り続ける光の線 -->
+          <div class="hero-streak">
+            <i style="--y: 26%; --d: 0s; --t: 7.5s"></i>
+            <i style="--y: 58%; --d: 2.6s; --t: 9s"></i>
+            <i style="--y: 81%; --d: 5.1s; --t: 6.5s"></i>
+          </div>
+
+          <!-- 計測HUD -->
+          <div class="hero-hud">
+            <span class="hud-bracket hud-tl"></span>
+            <span class="hud-bracket hud-br"></span>
+            <span class="hud-scan"></span>
+            <p class="hud-read hud-read-a"><b>AXIS</b> <i data-hud-x>0.000</i> / <i data-hud-y>0.000</i></p>
+            <p class="hud-read hud-read-b"><b data-hud-label>SPINDLE</b> <span class="hud-dot"></span></p>
+          </div>
+
+          <div class="hero-veil"></div>
+          <div class="hero-grain"></div>
+        </div>
+
+        <div class="hero-body">
+          <div class="shell">
+            <p class="hero-kicker" data-hero-el>
+              <i class="dot" aria-hidden="true"></i>
+              Strategic Outside Lab for Efficient Operations
+            </p>
+
+            <h1 class="hero-title" id="hero-title" data-hero-el>
+              <span class="line"><span>製造業のための、</span></span>
+              <span class="line"><span>社外戦略室<i class="accent">。</i></span></span>
+            </h1>
+
+            <p class="hero-lead" data-hero-el>
+              経営と現場のあいだに入り、IT・AI活用から業務改善、<br>
+              試作開発まで。必要な社内機能を、社外から。
+            </p>
+
+            <div class="hero-actions" data-hero-el>
+              <a class="btn btn-primary" href="#contact" data-magnetic>
+                <span>課題を相談する</span><i aria-hidden="true">↗</i>
+              </a>
+              <a class="btn btn-ghost" href="#service" data-magnetic>
+                <span>事業を見る</span><i aria-hidden="true">↓</i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="hero-visual" data-hero-visual data-hero-reveal>
-          <div class="hero-image-wrap">
-            <img src="img/hero-soleon.png" width="1672" height="941" alt="製造設備、データ分析画面、試作品が並ぶ開発現場" fetchpriority="high" decoding="async">
+        <div class="hero-rail" data-hero-el>
+          <p class="rail-label">Capabilities</p>
+          <div class="rail-track" data-marquee>
+            <ul>
+              <li>IT SUPPORT</li>
+              <li>AI</li>
+              <li>OPERATIONS</li>
+              <li>PROTOTYPING</li>
+            </ul>
           </div>
-          <div class="visual-scan" aria-hidden="true"></div>
-          <div class="visual-axis axis-x" aria-hidden="true"><span>X</span></div>
-          <div class="visual-axis axis-y" aria-hidden="true"><span>Y</span></div>
-          <p class="visual-coordinate" aria-hidden="true">AXIS X / Y — SYSTEM 01</p>
-          <div class="visual-marker" aria-hidden="true"><span></span></div>
-          <div class="visual-note">
-            <span>SOLEON / 00</span>
-            <strong>Strategy<br>meets operations.</strong>
-          </div>
+          <a class="rail-scroll" href="#about" aria-label="SOLEONとはへスクロール"><span>SCROLL</span><i aria-hidden="true"></i></a>
         </div>
-      </div>
-
-      <div class="capability-rail" aria-label="支援領域">
-        <p>Capabilities</p>
-        <ul>
-          <li>IT SUPPORT</li>
-          <li>AI</li>
-          <li>OPERATIONS</li>
-          <li>PROTOTYPING</li>
-        </ul>
-        <a href="#about" aria-label="SOLEONとはへスクロール"><span>SCROLL</span><i aria-hidden="true"></i></a>
       </div>
     </section>
 
-    <section class="section about-section" id="about" aria-labelledby="about-title">
-      <div class="section-shell">
-        <header class="section-heading" data-reveal>
-          <div class="section-label">
-            <span class="section-index">01</span>
-            <p>WHO WE ARE</p>
-          </div>
-          <p class="section-caption"><span>社内の外側から、</span><span>社内と同じ目線で。</span></p>
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="shell">
+        <header class="sec-head" data-anim>
+          <p class="sec-index">01</p>
+          <p class="sec-name">WHO WE ARE</p>
+          <p class="sec-caption"><span>社内の外側から、</span><span>社内と同じ目線で。</span></p>
         </header>
 
-        <div class="about-layout">
-          <div class="about-message" data-reveal>
-            <h2 id="about-title">ものづくり企業の、<br><span>もうひとつの社内。</span></h2>
-            <div class="about-rule" aria-hidden="true"><i></i><span>SOLEON</span></div>
+        <div class="about-grid">
+          <div class="about-lead">
+            <h2 class="display" id="about-title" data-anim-lines>
+              <span class="line"><span>ものづくり企業の、</span></span>
+              <span class="line"><span class="accent">もうひとつの社内。</span></span>
+            </h2>
+            <div class="rule" aria-hidden="true" data-anim><i></i><span>SOLEON</span></div>
           </div>
 
-          <div class="about-detail">
-            <div class="about-copy" data-reveal>
-              <p>SOLEONは、製造業の経営と現場を支える「もうひとつの社内」として、IT・AI活用、業務効率化、試作開発までを一緒に進めます。</p>
-              <p>大手のような戦略部門も、専任のIT人材も、社内の設計者も持たない企業に、必要な機能を外から提供し、売上・利益・生産性の向上に貢献します。</p>
-            </div>
+          <div class="about-copy" data-anim>
+            <p>SOLEONは、製造業の経営と現場を支える「もうひとつの社内」として、IT・AI活用、業務効率化、試作開発までを一緒に進めます。</p>
+            <p>大手のような戦略部門も、専任のIT人材も、社内の設計者も持たない企業に、必要な機能を外から提供し、売上・利益・生産性の向上に貢献します。</p>
+          </div>
+        </div>
+      </div>
 
-            <figure class="role-illustration" data-reveal>
-              <div class="role-image">
-                <img src="img/soleon-integrated-team.png" width="1691" height="930" loading="lazy" decoding="async" alt="同じ製造業の社内で、製造現場と経営・IT・設計・業務改善の支援チームが協働するイラスト">
+      <figure class="about-figure" data-anim-media>
+        <div class="frame">
+          <div class="frame-move" data-parallax="0.05">
+            <img src="img/about-inside.webp" width="1800" height="1208" loading="lazy" decoding="async"
+                 alt="ガラス越しに執務スペースと精密加工の現場がひとつづきの床でつながる、夜のものづくり企業">
+          </div>
+          <i class="wipe" aria-hidden="true"></i>
+        </div>
+        <figcaption aria-hidden="true"><span>SOLEON / 00</span><span>Strategy meets operations.</span></figcaption>
+      </figure>
+    </section>
+
+    <!-- ==================== SERVICE ==================== -->
+    <section class="section service" id="service" aria-labelledby="service-title">
+      <div class="shell">
+        <header class="sec-head" data-anim>
+          <p class="sec-index">02</p>
+          <p class="sec-name">OUR SERVICES</p>
+          <p class="sec-caption">From strategy to operations. From idea to prototype.</p>
+        </header>
+
+        <div class="service-intro">
+          <h2 class="display" id="service-title" data-anim-lines>
+            <span class="line"><span>経営と試作を、</span></span>
+            <span class="line"><span>ひとつの窓口で。</span></span>
+          </h2>
+          <p data-anim>情報システム支援、経営財務支援、そしてアイデアを形にする試作支援。<br>3つのサブスクリプションで、製造業に必要な社内機能を、必要な分だけ外から担います。</p>
+        </div>
+      </div>
+
+      <div class="service-list">
+
+        <article class="service-item" data-service>
+          <div class="shell">
+            <div class="service-top">
+              <div class="service-text">
+                <p class="service-no" aria-hidden="true">01</p>
+                <p class="service-kicker">IT SUPPORT</p>
+                <h3>情報システム支援<br>サブスクリプション</h3>
+                <p class="service-desc">御社の「情報システム部」を、まるごと外部に。ヘルプデスクや日常運用から、業務の効率化・自動化、IT戦略、セキュリティ強化まで。社内に担当を抱えなくても、必要な範囲を必要な分だけ任せられます。</p>
+                <a class="link-underline" href="#contact">この領域を相談する <span aria-hidden="true">↗</span></a>
               </div>
-            </figure>
+
+              <figure class="service-figure" data-anim-media>
+                <div class="frame">
+                  <div class="frame-move" data-parallax="0.03">
+            <img src="img/svc-01-it.webp" width="1400" height="1045" loading="lazy" decoding="async" 
+                       alt="暗い機械室で一灯に照らされた、整然と配線されたサーバーラック">
           </div>
-        </div>
+                  <i class="wipe" aria-hidden="true"></i>
+                </div>
+              </figure>
+            </div>
+
+            <ol class="caps" data-stagger>
+              <li><span>01</span><strong>ヘルプデスク・運用代行</strong><p>PC・社内システムの問い合わせに対応します。</p></li>
+              <li><span>02</span><strong>IT資産・アカウント管理</strong><p>キッティング・台帳・ライセンスを管理します。</p></li>
+              <li><span>03</span><strong>セキュリティ対策</strong><p>ウイルス・情報漏洩対策やポリシーを整えます。</p></li>
+              <li><span>04</span><strong>業務効率化・自動化</strong><p>ツール連携で定型業務を自動化します（<a href="https://claudecode.soleon.jp/blog/03-excel-production-aggregation">Excel集計の自動化事例</a>）。</p></li>
+              <li><span>05</span><strong>IT戦略・改善提案</strong><p>中長期のIT計画とコスト最適化を提案します。</p></li>
+              <li><span>06</span><strong>ネットワーク・インフラ</strong><p>サーバー・回線・環境構築を支援します。</p></li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="service-item" data-service>
+          <div class="shell">
+            <div class="service-top">
+              <div class="service-text">
+                <p class="service-no" aria-hidden="true">02</p>
+                <p class="service-kicker">FINANCE SUPPORT</p>
+                <h3>経営財務支援<br>サブスクリプション</h3>
+                <p class="service-desc">御社の財務戦略を担う「もうひとりの経営パートナー」。元金融機関出身者が専任で訪問し、資金調達や投資戦略を、製造業の立場に立ってアドバイスします。情報システム支援サブスクリプションとあわせた一体支援にも対応します。</p>
+                <a class="link-underline" href="#contact">この領域を相談する <span aria-hidden="true">↗</span></a>
+              </div>
+
+              <figure class="service-figure" data-anim-media>
+                <div class="frame">
+                  <div class="frame-move" data-parallax="0.03">
+            <img src="img/svc-02-finance.webp" width="1400" height="1045" loading="lazy" decoding="async" 
+                       alt="夜の役員会議室のテーブルに置かれた、収益推移のグラフ資料と万年筆">
+          </div>
+                  <i class="wipe" aria-hidden="true"></i>
+                </div>
+              </figure>
+            </div>
+
+            <ol class="caps" data-stagger>
+              <li><span>01</span><strong>資金調達・資金繰り</strong><p>設備投資・運転資金の調達戦略を立てます。</p></li>
+              <li><span>02</span><strong>投資戦略の立案</strong><p>成長に向けた投資判断を、数字で支援します。</p></li>
+              <li><span>03</span><strong>金融機関との交渉</strong><p>融資・借換えの面談同席まで伴走します。</p></li>
+              <li><span>04</span><strong>事業計画書の作成</strong><p>数値計画・収益予測を策定します。</p></li>
+              <li><span>05</span><strong>キャッシュフロー改善</strong><p>資金が残る仕組みづくりを支援します。</p></li>
+              <li><span>06</span><strong>月次の財務ミーティング</strong><p>経営判断を毎月、数字で後押しします。</p></li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="service-item" data-service>
+          <div class="shell">
+            <div class="service-top">
+              <div class="service-text">
+                <p class="service-no" aria-hidden="true">03</p>
+                <p class="service-kicker">PROTOTYPE SUPPORT</p>
+                <h3>試作支援<br>サブスクリプション</h3>
+                <p class="service-desc">設計者のいない企業の、社外設計部としてアイデアを形にします。</p>
+                <a class="link-underline" href="#contact">この領域を相談する <span aria-hidden="true">↗</span></a>
+              </div>
+
+              <figure class="service-figure" data-anim-media>
+                <div class="frame">
+                  <div class="frame-move" data-parallax="0.03">
+            <img src="img/svc-03-prototype.webp" width="1400" height="1045" loading="lazy" decoding="async" 
+                       alt="暗いスタジオに置かれた、機械加工のアルミ部品と3Dプリントのラティス構造の試作品">
+          </div>
+                  <i class="wipe" aria-hidden="true"></i>
+                </div>
+              </figure>
+            </div>
+
+            <ol class="caps" data-stagger>
+              <li><span>01</span><strong>相談・構想</strong><p>課題やアイデアを整理し、試作に向けた方向性を明確にします。</p></li>
+              <li><span>02</span><strong>設計・モデリング</strong><p>3D CADなどで形状や構造を検討し、試作用データを作成します。</p></li>
+              <li><span>03</span><strong>試作・検証</strong><p>試作品を通じて形状・機能を確認し、改善点を洗い出します。</p></li>
+              <li><span>04</span><strong>量産パートナリング</strong><p>量産に向けたパートナー選定や移行準備を支援します。</p></li>
+            </ol>
+          </div>
+        </article>
+
       </div>
-    </section>
 
-    <section class="section service-section" id="service" aria-labelledby="service-title">
-      <div class="service-blueprint" aria-hidden="true"></div>
-      <div class="section-shell">
-        <header class="section-heading section-heading-light" data-reveal>
-          <div class="section-label">
-            <span class="section-index">02</span>
-            <p>OUR SERVICES</p>
-          </div>
-          <p class="section-caption">From strategy to operations. From idea to prototype.</p>
-        </header>
-
-        <div class="service-intro" data-reveal>
-          <h2 id="service-title">経営と試作を、<br>ひとつの窓口で。</h2>
-          <p>情報システム支援、経営財務支援、そしてアイデアを形にする試作支援。<br>3つのサブスクリプションで、製造業に必要な社内機能を、必要な分だけ外から担います。</p>
-        </div>
-
-        <div class="service-list">
-          <article class="service-row strategic" data-reveal>
-            <div class="service-number" aria-hidden="true">01</div>
-            <div class="service-overview">
-              <p class="service-kicker">IT SUPPORT</p>
-              <h3>情報システム支援<br>サブスクリプション</h3>
-              <p>御社の「情報システム部」を、まるごと外部に。ヘルプデスクや日常運用から、業務の効率化・自動化、IT戦略、セキュリティ強化まで。社内に担当を抱えなくても、必要な範囲を必要な分だけ任せられます。</p>
-              <a href="#contact">この領域を相談する <span aria-hidden="true">↗</span></a>
-            </div>
-            <ol class="capability-list">
-              <li>
-                <span>01</span>
-                <strong>ヘルプデスク・運用代行</strong>
-                <p>PC・社内システムの問い合わせに対応します。</p>
-              </li>
-              <li>
-                <span>02</span>
-                <strong>IT資産・アカウント管理</strong>
-                <p>キッティング・台帳・ライセンスを管理します。</p>
-              </li>
-              <li>
-                <span>03</span>
-                <strong>セキュリティ対策</strong>
-                <p>ウイルス・情報漏洩対策やポリシーを整えます。</p>
-              </li>
-              <li>
-                <span>04</span>
-                <strong>業務効率化・自動化</strong>
-                <p>ツール連携で定型業務を自動化します（<a href="https://claudecode.soleon.jp/blog/03-excel-production-aggregation">Excel集計の自動化事例</a>）。</p>
-              </li>
-              <li>
-                <span>05</span>
-                <strong>IT戦略・改善提案</strong>
-                <p>中長期のIT計画とコスト最適化を提案します。</p>
-              </li>
-              <li>
-                <span>06</span>
-                <strong>ネットワーク・インフラ</strong>
-                <p>サーバー・回線・環境構築を支援します。</p>
-              </li>
-            </ol>
-          </article>
-
-          <article class="service-row strategic" data-reveal>
-            <div class="service-number" aria-hidden="true">02</div>
-            <div class="service-overview">
-              <p class="service-kicker">FINANCE SUPPORT</p>
-              <h3>経営財務支援<br>サブスクリプション</h3>
-              <p>御社の財務戦略を担う「もうひとりの経営パートナー」。元金融機関出身者が専任で訪問し、資金調達や投資戦略を、製造業の立場に立ってアドバイスします。情報システム支援サブスクリプションとあわせた一体支援にも対応します。</p>
-              <a href="#contact">この領域を相談する <span aria-hidden="true">↗</span></a>
-            </div>
-            <ol class="capability-list">
-              <li>
-                <span>01</span>
-                <strong>資金調達・資金繰り</strong>
-                <p>設備投資・運転資金の調達戦略を立てます。</p>
-              </li>
-              <li>
-                <span>02</span>
-                <strong>投資戦略の立案</strong>
-                <p>成長に向けた投資判断を、数字で支援します。</p>
-              </li>
-              <li>
-                <span>03</span>
-                <strong>金融機関との交渉</strong>
-                <p>融資・借換えの面談同席まで伴走します。</p>
-              </li>
-              <li>
-                <span>04</span>
-                <strong>事業計画書の作成</strong>
-                <p>数値計画・収益予測を策定します。</p>
-              </li>
-              <li>
-                <span>05</span>
-                <strong>キャッシュフロー改善</strong>
-                <p>資金が残る仕組みづくりを支援します。</p>
-              </li>
-              <li>
-                <span>06</span>
-                <strong>月次の財務ミーティング</strong>
-                <p>経営判断を毎月、数字で後押しします。</p>
-              </li>
-            </ol>
-          </article>
-
-          <article class="service-row prototype" data-reveal>
-            <div class="service-number" aria-hidden="true">03</div>
-            <div class="service-overview">
-              <p class="service-kicker">PROTOTYPE SUPPORT</p>
-              <h3>試作支援<br>サブスクリプション</h3>
-              <p>設計者のいない企業の、社外設計部としてアイデアを形にします。</p>
-              <a href="#contact">この領域を相談する <span aria-hidden="true">↗</span></a>
-            </div>
-            <ol class="capability-list">
-              <li>
-                <span>01</span>
-                <strong>相談・構想</strong>
-                <p>課題やアイデアを整理し、試作に向けた方向性を明確にします。</p>
-              </li>
-              <li>
-                <span>02</span>
-                <strong>設計・モデリング</strong>
-                <p>3D CADなどで形状や構造を検討し、試作用データを作成します。</p>
-              </li>
-              <li>
-                <span>03</span>
-                <strong>試作・検証</strong>
-                <p>試作品を通じて形状・機能を確認し、改善点を洗い出します。</p>
-              </li>
-              <li>
-                <span>04</span>
-                <strong>量産パートナリング</strong>
-                <p>量産に向けたパートナー選定や移行準備を支援します。</p>
-              </li>
-            </ol>
-          </article>
-        </div>
-
-        <div class="delivery-flow" data-reveal>
+      <div class="shell">
+        <div class="flow" data-flow data-anim>
           <div class="flow-copy">
-            <p>FROM QUESTION TO OPERATION</p>
+            <p class="flow-kicker">FROM QUESTION TO OPERATION</p>
             <h3>一緒に考え、形にし、<br>使える状態まで。</h3>
           </div>
-          <ol>
+          <ol class="flow-steps">
             <li><span>01</span><strong>課題を聞く</strong></li>
             <li><span>02</span><strong>整理する</strong></li>
             <li><span>03</span><strong>形にする</strong></li>
@@ -289,105 +309,131 @@
       </div>
     </section>
 
-    <!-- 相互リンク: LP（claudecode.soleon.jp / 活用事例）紹介 -->
-    <section class="section usecase-section" id="usecase" aria-labelledby="usecase-title">
-      <div class="section-shell">
-        <header class="section-heading" data-reveal>
-          <div class="section-label">
-            <span class="section-index">05</span>
-            <p>AI USE CASES</p>
-          </div>
-          <p class="section-caption"><span>現場で使える、</span><span>AI活用の実例を。</span></p>
+    <!-- ==================== USE CASES（相互リンク: claudecode.soleon.jp） ==================== -->
+    <section class="section usecase light has-band" id="usecase" aria-labelledby="usecase-title">
+      <div class="shell">
+        <header class="sec-head" data-anim>
+          <p class="sec-index">05</p>
+          <p class="sec-name">AI USE CASES</p>
+          <p class="sec-caption"><span>現場で使える、</span><span>AI活用の実例を。</span></p>
         </header>
 
-        <div class="usecase-layout" data-reveal>
-          <div class="usecase-copy">
-            <h2 id="usecase-title">製造業のAI活用事例を、<br><span>発信しています。</span></h2>
-            <p>製造業の現場で Claude Code / AI をどう使うか——生産管理のExcel集計、図面PDFからの情報抽出、日報の自動生成など、すぐ試せる実例とノウハウを継続的にまとめています。専用の情報サイト「claudecode.soleon.jp」で公開中です。</p>
-            <a class="button button-primary" href="https://claudecode.soleon.jp/">
-              <span>活用事例を見る</span><span class="button-arrow" aria-hidden="true">↗</span>
+        <div class="usecase-grid">
+          <div class="usecase-lead">
+            <h2 class="display" id="usecase-title" data-anim-lines>
+              <span class="line"><span>製造業のAI活用事例を、</span></span>
+              <span class="line"><span class="accent">発信しています。</span></span>
+            </h2>
+            <p data-anim>製造業の現場で Claude Code / AI をどう使うか——生産管理のExcel集計、図面PDFからの情報抽出、日報の自動生成など、すぐ試せる実例とノウハウを継続的にまとめています。専用の情報サイト「claudecode.soleon.jp」で公開中です。</p>
+            <a class="btn btn-dark" href="https://claudecode.soleon.jp/" data-magnetic data-anim>
+              <span>活用事例を見る</span><i aria-hidden="true">↗</i>
             </a>
           </div>
 
-          <ul class="usecase-list">
+          <ul class="usecase-list" data-stagger>
             <li>
               <a href="https://claudecode.soleon.jp/blog/03-excel-production-aggregation">
-                <span class="usecase-tag">実装事例</span>
-                <span>生産管理のExcelをAIで自動集計・可視化する</span>
+                <span class="tag">実装事例</span>
+                <span class="ttl">生産管理のExcelをAIで自動集計・可視化する</span>
+                <i aria-hidden="true">↗</i>
               </a>
             </li>
             <li>
               <a href="https://claudecode.soleon.jp/blog/04-pdf-drawing-extraction">
-                <span class="usecase-tag">実装事例</span>
-                <span>図面・仕様書PDFからの情報抽出をAIで効率化する</span>
+                <span class="tag">実装事例</span>
+                <span class="ttl">図面・仕様書PDFからの情報抽出をAIで効率化する</span>
+                <i aria-hidden="true">↗</i>
               </a>
             </li>
             <li>
               <a href="https://claudecode.soleon.jp/blog/09-claude-code-introduction-steps">
-                <span class="usecase-tag">入門</span>
-                <span>Claude Code導入は何から？ 失敗しない5つのステップ</span>
+                <span class="tag">入門</span>
+                <span class="ttl">Claude Code導入は何から？ 失敗しない5つのステップ</span>
+                <i aria-hidden="true">↗</i>
               </a>
             </li>
           </ul>
         </div>
       </div>
+
+      <figure class="band" data-anim-media>
+        <div class="frame">
+          <div class="frame-move" data-parallax="0.05">
+            <img src="img/usecase-flatlay.webp" width="1800" height="764" loading="lazy" decoding="async" 
+               alt="黒い机上に整然と並べられた、機械加工部品・図面・ノート">
+          </div>
+          <i class="wipe" aria-hidden="true"></i>
+        </div>
+      </figure>
     </section>
 
-    <section class="section concept-section" id="concept" aria-labelledby="concept-title">
-      <div class="section-shell">
-        <header class="section-heading" data-reveal>
-          <div class="section-label">
-            <span class="section-index">03</span>
-            <p>OUR NAME</p>
-          </div>
-          <p class="section-caption">Five ideas, one name.</p>
+    <!-- ==================== NAME ==================== -->
+    <section class="section concept has-band" id="concept" aria-labelledby="concept-title">
+      <div class="shell">
+        <header class="sec-head" data-anim>
+          <p class="sec-index">03</p>
+          <p class="sec-name">OUR NAME</p>
+          <p class="sec-caption">Five ideas, one name.</p>
         </header>
 
-        <div class="concept-intro" data-reveal>
-          <h2 id="concept-title">5つの言葉が、<br><span>社名</span>になりました。</h2>
-          <p>戦略を描き、社外から支え、試してつなぎ、効率を高め、日々の業務まで伴走する。その役割を「SOLEON」に込めています。</p>
+        <div class="concept-intro">
+          <h2 class="display" id="concept-title" data-anim-lines>
+            <span class="line"><span>5つの言葉が、</span></span>
+            <span class="line"><span class="accent">社名</span><span>になりました。</span></span>
+          </h2>
+          <p data-anim>戦略を描き、社外から支え、試してつなぎ、効率を高め、日々の業務まで伴走する。その役割を「SOLEON」に込めています。</p>
         </div>
 
-        <ol class="name-grid" data-reveal>
+        <ol class="name-grid" data-stagger>
           <li>
-            <span class="name-symbol">S</span>
+            <span class="glyph">S</span>
             <div><strong>Strategic</strong><p>経営の上流から、次の一手を共に描く。</p></div>
           </li>
           <li>
-            <span class="name-symbol">O</span>
+            <span class="glyph">O</span>
             <div><strong>Outside</strong><p>社外の視点で、客観的に課題を見つめる。</p></div>
           </li>
           <li>
-            <span class="name-symbol">L</span>
+            <span class="glyph">L</span>
             <div><strong>Lab &amp; Link</strong><p>試す場であり、作り手・売り先へつなぐ架け橋。</p></div>
           </li>
           <li>
-            <span class="name-symbol">E</span>
+            <span class="glyph">E</span>
             <div><strong>Efficient</strong><p>AIとデジタルで、ムダのない経営を実現する。</p></div>
           </li>
-          <li class="name-on">
-            <span class="name-symbol">ON<span class="accent">.</span></span>
+          <li class="is-on">
+            <span class="glyph">ON<i class="accent">.</i></span>
             <div><strong>Operations</strong><p>戦略から日々の業務まで、まるごと支える。</p></div>
           </li>
         </ol>
       </div>
+
+      <figure class="band band-tall" data-anim-media>
+        <div class="frame">
+          <div class="frame-move" data-parallax="0.05">
+            <img src="img/concept-macro.webp" width="1800" height="764" loading="lazy" decoding="async" 
+               alt="一灯に照らされた、精密加工されたアルミ部品のマクロ写真">
+          </div>
+          <i class="wipe" aria-hidden="true"></i>
+        </div>
+      </figure>
     </section>
 
-    <section class="section company-section" id="company" aria-labelledby="company-title">
-      <div class="section-shell">
-        <header class="section-heading" data-reveal>
-          <div class="section-label">
-            <span class="section-index">04</span>
-            <p>COMPANY</p>
-          </div>
-          <p class="section-caption">SOLEON Inc.</p>
+    <!-- ==================== COMPANY ==================== -->
+    <section class="section company light" id="company" aria-labelledby="company-title">
+      <div class="shell">
+        <header class="sec-head" data-anim>
+          <p class="sec-index">04</p>
+          <p class="sec-name">COMPANY</p>
+          <p class="sec-caption">SOLEON Inc.</p>
         </header>
 
-        <div class="company-layout">
-          <div class="company-title-block" data-reveal>
-            <h2 id="company-title">会社概要</h2>
-          </div>
-          <dl class="company-list" data-reveal>
+        <div class="company-grid">
+          <h2 class="display" id="company-title" data-anim-lines>
+            <span class="line"><span>会社概要</span></span>
+          </h2>
+
+          <dl class="company-list" data-stagger>
             <div>
               <dt>商号 <span>Company</span></dt>
               <dd>株式会社SOLEON</dd>
@@ -405,22 +451,26 @@
       </div>
     </section>
 
-    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="contact-grid" aria-hidden="true"></div>
-      <div class="contact-orbit" aria-hidden="true"></div>
-      <div class="section-shell contact-layout">
-        <div class="contact-copy" data-reveal>
-          <p class="contact-kicker">CONTACT</p>
-          <h2 id="contact-title">まずは課題を、<br>お聞かせください。</h2>
-          <p>社内IT・情報システム支援、業務効率化、AI活用、試作支援など、検討段階のご相談からお送りいただけます。</p>
-          <div class="contact-meta" aria-hidden="true">
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-bg" aria-hidden="true" data-parallax="0.05"></div>
+
+      <div class="shell contact-grid">
+        <div class="contact-copy">
+          <p class="sec-name accent" data-anim>CONTACT</p>
+          <h2 class="display" id="contact-title" data-anim-lines>
+            <span class="line"><span>まずは課題を、</span></span>
+            <span class="line"><span>お聞かせください。</span></span>
+          </h2>
+          <p class="contact-desc" data-anim>社内IT・情報システム支援、業務効率化、AI活用、試作支援など、検討段階のご相談からお送りいただけます。</p>
+          <div class="contact-meta" aria-hidden="true" data-anim>
             <span>SOLEON / CONTACT DESK</span>
             <span>READY TO LISTEN</span>
           </div>
         </div>
 
-        <form class="contact-form" data-contact-form data-contact-user="morita_daisuke" data-contact-cc-user="okamoto_hiroto" data-contact-domain="soleon" data-contact-tld="jp" data-reveal>
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden-field">
+        <form class="form" data-contact-form data-contact-user="morita_daisuke" data-contact-cc-user="okamoto_hiroto" data-contact-domain="soleon" data-contact-tld="jp" data-anim>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honey">
           <input type="hidden" name="_subject" value="SOLEONサイトからお問い合わせ">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
@@ -430,30 +480,30 @@
             <span><i aria-hidden="true"></i> 必須項目</span>
           </div>
 
-          <div class="form-grid">
-            <label class="form-field">
-              <span><i>01</i> 会社名</span>
-              <input type="text" name="company" autocomplete="organization">
+          <div class="form-row">
+            <label class="field">
+              <span class="field-label"><i>01</i> 会社名 <b aria-label="必須"></b></span>
+              <input type="text" name="company" autocomplete="organization" required>
             </label>
 
-            <label class="form-field">
-              <span><i>02</i> お名前 <b aria-label="必須"></b></span>
+            <label class="field">
+              <span class="field-label"><i>02</i> お名前 <b aria-label="必須"></b></span>
               <input type="text" name="name" autocomplete="name" required>
             </label>
           </div>
 
-          <label class="form-field">
-            <span><i>03</i> 返信用メールアドレス <b aria-label="必須"></b></span>
+          <label class="field">
+            <span class="field-label"><i>03</i> 返信用メールアドレス <b aria-label="必須"></b></span>
             <input type="email" name="email" autocomplete="email" inputmode="email" required>
           </label>
 
-          <label class="form-field">
-            <span><i>04</i> お問い合わせ内容 <b aria-label="必須"></b></span>
+          <label class="field">
+            <span class="field-label"><i>04</i> お問い合わせ内容 <b aria-label="必須"></b></span>
             <textarea name="message" rows="6" required></textarea>
           </label>
 
-          <div class="form-actions">
-            <button type="submit" class="submit-button"><span>送信する</span><i aria-hidden="true">↗</i></button>
+          <div class="form-foot">
+            <button type="submit" class="btn btn-primary btn-submit" data-magnetic><span>送信する</span><i aria-hidden="true">↗</i></button>
             <p class="form-status" data-form-status role="status" aria-live="polite"></p>
           </div>
         </form>
@@ -461,25 +511,31 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="#top" class="footer-brand" aria-label="ページ上部へ">SOLEON<span>.</span></a>
-      <p>製造業のための、社外戦略室。</p>
-      <div><small>&copy; SOLEON Inc.</small><a href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a></div>
-    </div>
-    <div class="footer-secondary">
-      <nav class="footer-links" aria-label="関連リンク">
-        <a href="https://claudecode.soleon.jp/">製造業向けClaude Code活用事例 ↗</a>
-        <a href="https://x.com/soleon_dx" target="_blank" rel="noopener">X（公式）@soleon_dx ↗</a>
-        <a href="https://www.instagram.com/soleon_dx/" target="_blank" rel="noopener">Instagram（公式）↗</a>
-        <a href="#service">事業紹介</a>
-        <a href="#contact">お問い合わせ</a>
-      </nav>
-      <p class="footer-contact">
-        <a href="mailto:morita_daisuke@soleon.jp">morita_daisuke@soleon.jp</a>
-        <span aria-hidden="true">／</span>
-        <a href="tel:09085338410">090-8533-8410</a>
-      </p>
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-top">
+        <a href="#top" class="footer-brand" aria-label="ページ上部へ">SOLEON<i class="accent">.</i></a>
+        <p class="footer-tag">製造業のための、社外戦略室。</p>
+        <div class="footer-back">
+          <small>&copy; SOLEON Inc.</small>
+          <a href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <nav class="footer-links" aria-label="関連リンク">
+          <a href="https://claudecode.soleon.jp/">製造業向けClaude Code活用事例 ↗</a>
+          <a href="https://x.com/soleon_dx" target="_blank" rel="noopener">X（公式）@soleon_dx ↗</a>
+          <a href="https://www.instagram.com/soleon_dx/" target="_blank" rel="noopener">Instagram（公式）↗</a>
+          <a href="#service">事業紹介</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
+        <p class="footer-contact">
+          <a href="mailto:morita_daisuke@soleon.jp">morita_daisuke@soleon.jp</a>
+          <span aria-hidden="true">／</span>
+          <a href="tel:09085338410">090-8533-8410</a>
+        </p>
+      </div>
     </div>
   </footer>
 
