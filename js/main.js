@@ -61,6 +61,42 @@
   }
 
   /* ----------------------------------------------------------
+     note ドロップダウン（05）
+     デスクトップはホバーで開く。タッチ環境向けにクリックでも開閉する
+     ---------------------------------------------------------- */
+  var noteDrop = document.querySelector("[data-nav-note]");
+  if (noteDrop) {
+    var noteButton = noteDrop.querySelector(".nav-note-btn");
+
+    var setNoteDrop = function (open) {
+      noteDrop.classList.toggle("is-open", open);
+      if (noteButton) noteButton.setAttribute("aria-expanded", String(open));
+    };
+
+    if (noteButton) {
+      noteButton.addEventListener("click", function () {
+        setNoteDrop(!noteDrop.classList.contains("is-open"));
+      });
+      noteDrop.addEventListener("mouseenter", function () { setNoteDrop(true); });
+      noteDrop.addEventListener("mouseleave", function () { setNoteDrop(false); });
+      noteDrop.addEventListener("focusout", function (event) {
+        if (!noteDrop.contains(event.relatedTarget)) setNoteDrop(false);
+      });
+    }
+
+    document.addEventListener("pointerdown", function (event) {
+      if (!noteDrop.contains(event.target)) setNoteDrop(false);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && noteDrop.classList.contains("is-open")) {
+        setNoteDrop(false);
+        if (noteButton) noteButton.focus();
+      }
+    });
+  }
+
+  /* ----------------------------------------------------------
      Capabilities マーキー（-50% で1周するよう内容を複製する）
      ---------------------------------------------------------- */
   Array.prototype.forEach.call(document.querySelectorAll("[data-marquee] ul"), function (list) {

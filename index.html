@@ -46,9 +46,22 @@
       <nav class="nav" id="site-nav" aria-label="サイト内ナビゲーション" data-nav>
         <a href="#about"><span>01</span> SOLEONとは</a>
         <a href="#service"><span>02</span> 事業紹介</a>
-        <a href="#note"><span>03</span> note</a>
-        <a href="#concept"><span>04</span> 社名の由来</a>
-        <a href="#company"><span>05</span> 会社概要</a>
+        <a href="#concept"><span>03</span> 社名の由来</a>
+        <a href="#company"><span>04</span> 会社概要</a>
+
+        <div class="nav-note" data-nav-note>
+          <button class="nav-note-btn" type="button" aria-expanded="false" aria-controls="nav-note-menu">
+            <span>05</span> note<i aria-hidden="true">↗</i>
+          </button>
+          <div class="nav-note-menu" id="nav-note-menu">
+            <a href="https://note.com/soleon_morita" target="_blank" rel="noopener">
+              <strong>森田 大介</strong><em>CEO</em>
+            </a>
+            <a href="https://note.com/soleon_okamoto" target="_blank" rel="noopener">
+              <strong>岡本 大都</strong><em>CSO</em>
+            </a>
+          </div>
+        </div>
         <a class="nav-cta" href="#contact">お問い合わせ <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -309,59 +322,11 @@
       </div>
     </section>
 
-    <!-- ==================== NOTE（中の人の発信 / note.com） ==================== -->
-    <section class="section note light has-band" id="note" aria-labelledby="note-title">
-      <div class="shell">
-        <header class="sec-head" data-anim>
-          <p class="sec-index">03</p>
-          <p class="sec-name">NOTE</p>
-          <p class="sec-caption"><span>会社の言葉ではなく、</span><span>中の人の言葉で。</span></p>
-        </header>
-
-        <div class="note-grid">
-          <div class="note-lead">
-            <h2 class="display" id="note-title" data-anim-lines>
-              <span class="line"><span>考えていることは、</span></span>
-              <span class="line"><span class="accent">noteに書いています。</span></span>
-            </h2>
-            <p data-anim>実際に工場へ通い、ヒアリングから設計・実装・導入・保守まで自分たちの手でやっています。その途中で見えたこと、うまくいかなかったこと、経営から見たAIの話——きれいな事例集にはならない話を、メンバーがそれぞれの言葉で書いています。</p>
-          </div>
-
-          <ul class="note-list" data-stagger>
-            <li>
-              <a href="https://note.com/soleon_morita" target="_blank" rel="noopener">
-                <span class="tag">CEO</span>
-                <span class="ttl">森田 大介<em>製造業のDXを、コンサルではなく実装まで。現場で考えたことを書いています。</em></span>
-                <i aria-hidden="true">↗</i>
-              </a>
-            </li>
-            <li>
-              <a href="https://note.com/soleon_okamoto" target="_blank" rel="noopener">
-                <span class="tag">CSO</span>
-                <span class="ttl">岡本 大都<em>金融機関から製造業グループへ。経営の視点で、中小企業とAIの話を書いています。</em></span>
-                <i aria-hidden="true">↗</i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <figure class="band" data-anim-media>
-        <div class="frame">
-          <div class="frame-move" data-parallax="0.05">
-            <img src="img/usecase-flatlay.webp" width="1800" height="764" loading="lazy" decoding="async" 
-               alt="黒い机上に整然と並べられた、機械加工部品・図面・ノート">
-          </div>
-          <i class="wipe" aria-hidden="true"></i>
-        </div>
-      </figure>
-    </section>
-
     <!-- ==================== NAME ==================== -->
     <section class="section concept has-band" id="concept" aria-labelledby="concept-title">
       <div class="shell">
         <header class="sec-head" data-anim>
-          <p class="sec-index">04</p>
+          <p class="sec-index">03</p>
           <p class="sec-name">OUR NAME</p>
           <p class="sec-caption">Five ideas, one name.</p>
         </header>
@@ -413,7 +378,7 @@
     <section class="section company light" id="company" aria-labelledby="company-title">
       <div class="shell">
         <header class="sec-head" data-anim>
-          <p class="sec-index">05</p>
+          <p class="sec-index">04</p>
           <p class="sec-name">COMPANY</p>
           <p class="sec-caption">SOLEON Inc.</p>
         </header>

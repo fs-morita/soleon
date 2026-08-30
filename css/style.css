@@ -207,6 +207,119 @@ html:not(.js) .header::after { opacity: 1; }
 .nav > a:hover::after,
 .nav > a.is-current::after { transform: scaleX(1); transform-origin: left center; }
 
+/* note ドロップダウン（05） */
+.nav-note { position: relative; }
+.nav-note-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 0;
+  color: var(--on-dark-2);
+  background: none;
+  border: 0;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+.nav-note-btn > span {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--on-dark-3);
+  transition: color 0.25s ease;
+}
+.nav-note-btn > i {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 10px;
+  color: var(--on-dark-3);
+  transition: transform 0.35s var(--ease), color 0.25s ease;
+}
+.nav-note-btn::after {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  content: "";
+  background: var(--magenta-bright);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.45s var(--ease);
+}
+.nav-note:hover .nav-note-btn,
+.nav-note:focus-within .nav-note-btn { color: var(--white); }
+.nav-note:hover .nav-note-btn > span,
+.nav-note:focus-within .nav-note-btn > span,
+.nav-note:hover .nav-note-btn > i,
+.nav-note:focus-within .nav-note-btn > i { color: var(--magenta-bright); }
+.nav-note:hover .nav-note-btn > i,
+.nav-note:focus-within .nav-note-btn > i { transform: translate(2px, -2px); }
+.nav-note:hover .nav-note-btn::after,
+.nav-note:focus-within .nav-note-btn::after { transform: scaleX(1); transform-origin: left center; }
+
+.nav-note-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  z-index: 20;
+  display: grid;
+  min-width: 216px;
+  padding: 8px;
+  background: var(--ink);
+  border: 1px solid var(--hair-dark);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -8px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s;
+}
+/* ボタンとメニューの隙間でホバーが切れないように */
+.nav-note-menu::before {
+  position: absolute;
+  top: -14px;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  content: "";
+}
+.nav-note:hover .nav-note-menu,
+.nav-note:focus-within .nav-note-menu,
+.nav-note.is-open .nav-note-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+.nav-note-menu a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--on-dark-2);
+  font-size: 13px;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+.nav-note-menu a:hover { color: var(--white); background: var(--hair-dark-soft); }
+.nav-note-menu strong { font-weight: 600; }
+.nav-note-menu em {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--on-dark-3);
+  transition: color 0.25s ease;
+}
+.nav-note-menu a:hover em { color: var(--magenta-bright); }
+
 .nav-cta {
   padding: 11px 20px;
   color: var(--white) !important;
@@ -1054,74 +1167,6 @@ html:not(.js) .header::after { opacity: 1; }
 }
 .flow-steps li.is-on strong { color: var(--on-light); }
 
-/* ============================================================
-   note（中の人の発信）
-   ============================================================ */
-.note-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(40px, 6vw, 104px);
-  align-items: start;
-  margin-top: clamp(56px, 7vw, 104px);
-}
-.note-lead .display { font-size: clamp(28px, 3.5vw, 56px); }
-.note-lead > p {
-  max-width: 50ch;
-  margin: clamp(24px, 3vw, 36px) 0 clamp(30px, 3.6vw, 44px);
-  color: var(--on-light-2);
-  font-size: clamp(14px, 1vw, 15.5px);
-  line-height: 2.15;
-}
-
-.note-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--hair-light);
-}
-.note-list li { border-bottom: 1px solid var(--hair-light); }
-.note-list a {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: start;
-  gap: 18px;
-  padding: 26px 4px;
-  transition: padding 0.45s var(--ease), color 0.25s ease;
-}
-.note-list a:hover { padding-left: 14px; color: var(--magenta); }
-.note-list .tag {
-  margin-top: 2px;
-  padding: 5px 12px;
-  color: var(--white);
-  background: var(--ink);
-  border-radius: 999px;
-  font-family: var(--mono);
-  font-size: 9.5px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  transition: background 0.25s ease;
-}
-.note-list a:hover .tag { background: var(--magenta); }
-.note-list .ttl { font-size: 15px; font-weight: 600; line-height: 1.7; }
-.note-list .ttl em {
-  display: block;
-  margin-top: 6px;
-  color: var(--on-light-3);
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.9;
-  transition: color 0.25s ease;
-}
-.note-list i {
-  margin-top: 2px;
-  font-family: var(--mono);
-  font-style: normal;
-  color: var(--on-light-3);
-  transition: transform 0.4s var(--ease), color 0.25s ease;
-}
-.note-list a:hover i { color: var(--magenta); transform: translate(3px, -3px); }
-
 /* full-bleed bands（帯を持つセクションは下パディングを持たない） */
 .section.has-band { padding-bottom: 0; }
 .band {
@@ -1519,6 +1564,32 @@ html:not(.js) .header::after { opacity: 1; }
   .nav.is-open { opacity: 1; visibility: visible; transform: none; }
   .nav > a { padding: 16px 4px; border-bottom: 1px solid var(--hair-dark-soft); font-size: 14px; }
   .nav > a::after { display: none; }
+
+  /* モバイルはホバーが使えないので、noteの2件をそのまま並べる */
+  .nav-note-btn {
+    width: 100%;
+    padding: 16px 4px 10px;
+    font-size: 14px;
+    cursor: default;
+    pointer-events: none;
+  }
+  .nav-note-btn > i { display: none; }
+  .nav-note-btn::after { display: none; }
+  .nav-note-menu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 6px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--hair-dark-soft);
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .nav-note-menu::before { display: none; }
+  .nav-note-menu a { padding: 11px 4px 11px 18px; border-radius: 0; }
   .nav-cta {
     margin-top: 16px;
     justify-content: center;
@@ -1528,7 +1599,6 @@ html:not(.js) .header::after { opacity: 1; }
 
   .about-grid,
   .service-intro,
-  .note-grid,
   .concept-intro,
   .company-grid,
   .contact-grid { grid-template-columns: minmax(0, 1fr); }
