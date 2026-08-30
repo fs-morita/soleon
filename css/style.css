@@ -1055,17 +1055,17 @@ html:not(.js) .header::after { opacity: 1; }
 .flow-steps li.is-on strong { color: var(--on-light); }
 
 /* ============================================================
-   Use cases
+   note（中の人の発信）
    ============================================================ */
-.usecase-grid {
+.note-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(40px, 6vw, 104px);
   align-items: start;
   margin-top: clamp(56px, 7vw, 104px);
 }
-.usecase-lead .display { font-size: clamp(28px, 3.5vw, 56px); }
-.usecase-lead > p {
+.note-lead .display { font-size: clamp(28px, 3.5vw, 56px); }
+.note-lead > p {
   max-width: 50ch;
   margin: clamp(24px, 3vw, 36px) 0 clamp(30px, 3.6vw, 44px);
   color: var(--on-light-2);
@@ -1073,23 +1073,24 @@ html:not(.js) .header::after { opacity: 1; }
   line-height: 2.15;
 }
 
-.usecase-list {
+.note-list {
   margin: 0;
   padding: 0;
   list-style: none;
   border-top: 1px solid var(--hair-light);
 }
-.usecase-list li { border-bottom: 1px solid var(--hair-light); }
-.usecase-list a {
+.note-list li { border-bottom: 1px solid var(--hair-light); }
+.note-list a {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
+  align-items: start;
   gap: 18px;
   padding: 26px 4px;
   transition: padding 0.45s var(--ease), color 0.25s ease;
 }
-.usecase-list a:hover { padding-left: 14px; color: var(--magenta); }
-.usecase-list .tag {
+.note-list a:hover { padding-left: 14px; color: var(--magenta); }
+.note-list .tag {
+  margin-top: 2px;
   padding: 5px 12px;
   color: var(--white);
   background: var(--ink);
@@ -1100,15 +1101,26 @@ html:not(.js) .header::after { opacity: 1; }
   letter-spacing: 0.1em;
   transition: background 0.25s ease;
 }
-.usecase-list a:hover .tag { background: var(--magenta); }
-.usecase-list .ttl { font-size: 15px; font-weight: 500; line-height: 1.7; }
-.usecase-list i {
+.note-list a:hover .tag { background: var(--magenta); }
+.note-list .ttl { font-size: 15px; font-weight: 600; line-height: 1.7; }
+.note-list .ttl em {
+  display: block;
+  margin-top: 6px;
+  color: var(--on-light-3);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.9;
+  transition: color 0.25s ease;
+}
+.note-list i {
+  margin-top: 2px;
   font-family: var(--mono);
   font-style: normal;
   color: var(--on-light-3);
   transition: transform 0.4s var(--ease), color 0.25s ease;
 }
-.usecase-list a:hover i { color: var(--magenta); transform: translate(3px, -3px); }
+.note-list a:hover i { color: var(--magenta); transform: translate(3px, -3px); }
 
 /* full-bleed bands（帯を持つセクションは下パディングを持たない） */
 .section.has-band { padding-bottom: 0; }
@@ -1516,7 +1528,7 @@ html:not(.js) .header::after { opacity: 1; }
 
   .about-grid,
   .service-intro,
-  .usecase-grid,
+  .note-grid,
   .concept-intro,
   .company-grid,
   .contact-grid { grid-template-columns: minmax(0, 1fr); }
