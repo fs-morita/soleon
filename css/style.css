@@ -233,15 +233,6 @@ html:not(.js) .header::after { opacity: 1; }
   color: var(--on-dark-3);
   transition: color 0.25s ease;
 }
-.nav > a > i {
-  margin-left: 4px;
-  font-family: var(--mono);
-  font-style: normal;
-  font-size: 10px;
-  color: var(--on-dark-3);
-  transition: color 0.25s ease;
-}
-.nav > a:hover > i { color: var(--magenta-bright); }
 .nav-note-btn > i {
   font-family: var(--mono);
   font-style: normal;
