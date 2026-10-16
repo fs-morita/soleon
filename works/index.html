@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>オーダーメイドの業務システム | 株式会社SOLEON</title>
+  <meta name="description" content="株式会社SOLEONのご紹介資料。紙・Excel・手作業でやっている仕事を、お話を聞いて会社ごとの画面にします。成形工場のために作った道具を例にご紹介します。">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0F1B2D">
+  <meta property="og:title" content="オーダーメイドの業務システム | 株式会社SOLEON">
+  <meta property="og:description" content="株式会社SOLEONのご紹介資料。紙・Excel・手作業でやっている仕事を、お話を聞いて会社ごとの画面にします。成形工場のために作った道具を例にご紹介します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://soleon.jp/works/">
+  <meta property="og:image" content="https://soleon.jp/works/img/board.webp">
+  <link rel="canonical" href="https://soleon.jp/works/">
+  <link rel="icon" href="../img/favicon.ico" sizes="any">
+  <link rel="icon" href="../img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-055V7YHC94"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-055V7YHC94');
+  </script>
+<style>
+/* 営業資料。WORKS と同じ濃紺・白・ピンク・IBM Plex。表紙と終わりは濃紺の1枚、中は白い紙に画面1つと短い文。
+   案1（.deck）：PC は 16:9 のスライドを1枚ずつめくる。案2（.pages）：紙の資料のように縦に続く。スマホはどちらも縦に1枚ずつ */
+:root{
+  --desk:#E9ECF1; --paper:#FFFFFF; --paper-2:#F3F4F7; --ink:#121722; --sub:#434B59; --faint:#6A7383;
+  --line:#E1E4EA; --line2:#C9CED7; --navy:#0F1B2D; --on-navy:#EEF2F8; --navy-sub:#93A0B5; --navy-line:#2E4263;
+  --pink:#E3027C; --on-pink:#FFFFFF;
+  --f:"IBM Plex Sans","IBM Plex Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --num:"IBM Plex Sans Condensed","IBM Plex Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --desk:#05080F; --paper:#0F1725; --paper-2:#131D2E; --ink:#EEF2F8; --sub:#A6B1C3; --faint:#8491A6;
+  --line:#1E2A3E; --line2:#2B3A53; --navy:#0B1220; --pink:#FF3D9E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --desk:#05080F; --paper:#0F1725; --paper-2:#131D2E; --ink:#EEF2F8; --sub:#A6B1C3; --faint:#8491A6;
+  --line:#1E2A3E; --line2:#2B3A53; --navy:#0B1220; --pink:#FF3D9E; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+[hidden]{display:none!important}
+html,body{background:var(--desk)}
+body{color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.8;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+h1,h2,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2{text-wrap:balance;word-break:auto-phrase;line-height:1.45;letter-spacing:.03em}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--pink);color:var(--on-pink);border-radius:8px;padding:.7em 1.5em;font-weight:600;text-decoration:none;white-space:nowrap}
+.btn:hover{filter:brightness(1.07)}
+
+/* ---------- 縦に続く形（案2 と、どちらもスマホ） ---------- */
+.doc{counter-reset:pg;display:grid;gap:20px;padding-block:20px 40px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+.sl{counter-increment:pg;position:relative;width:100%;max-width:1120px;margin-inline:auto;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:44px 48px 52px;display:grid;gap:28px;align-content:start;min-width:0}
+.sl::after{content:attr(data-pg);position:absolute;right:20px;bottom:14px;font-family:var(--num);font-size:12px;color:var(--faint);letter-spacing:.06em}
+.sl::before{content:"SOLEON";position:absolute;left:48px;bottom:14px;font-size:11px;letter-spacing:.16em;color:var(--faint)}
+.eb{font-size:13px;letter-spacing:.12em;color:var(--pink);font-weight:600}
+.sl h2{font-size:26px;font-weight:700;margin-top:8px}
+.txt{min-width:0}
+.txt p:not(.eb):not(.small):not(.lead){color:var(--sub);margin-top:14px;max-width:36em}
+.pic{border:1px solid var(--line2);border-radius:8px;overflow:hidden;background:var(--paper-2)}
+.pic img{width:100%}
+.shot{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:40px}
+.pts{margin-top:18px;display:grid;gap:10px}
+.pts li{padding-left:16px;position:relative;color:var(--sub)}
+.pts li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:6px;background:var(--pink)}
+
+.cover{background:var(--navy);border-color:var(--navy);color:var(--on-navy);padding-block:56px 64px;min-height:420px;align-content:end}
+.cover::before,.cover::after{color:var(--navy-sub)}
+.cover .logo{height:20px;width:auto;margin-bottom:56px}
+.cover .eb{color:var(--navy-sub)}
+.cover h1{font-size:38px;font-weight:700;margin-top:12px;max-width:17em}
+.cover h2{font-size:32px;max-width:18em}
+.cover .lead{margin-top:16px;font-size:18px;color:#C4CDDA}
+.cover .small{margin-top:40px;font-size:13px;color:var(--navy-sub)}
+.cover .acts{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.cover .mail{color:var(--navy-sub);font-size:14px;user-select:all}
+
+.pains{display:grid;border-top:1px solid var(--line2)}
+.pains li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4px 32px;padding:16px 0;border-bottom:1px solid var(--line)}
+.pains b{font-size:17px}
+.pains span{color:var(--sub)}
+
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:none}
+.steps li{position:relative;display:grid;gap:6px;align-content:start;padding:18px 18px 22px;border:1px solid var(--line2);border-radius:8px;background:var(--paper-2)}
+.steps li:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;width:8px;height:8px;border-top:2px solid var(--line2);border-right:2px solid var(--line2);transform:translateY(-50%) rotate(45deg)}
+.steps .n{font-family:var(--num);font-weight:600;font-size:28px;line-height:1;color:var(--pink)}
+.steps b{font-size:17px;margin-top:6px}
+.steps li>span:last-child{font-size:14px;color:var(--sub)}
+
+.phones{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:40px}
+.pic3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pic3 img{border:1px solid var(--line2);border-radius:10px;width:100%}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:1px 10px;border:1px solid var(--line2);border-radius:999px;color:var(--sub)}
+
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;border-top:1px solid var(--line2)}
+.grid div{padding:14px 0;border-bottom:1px solid var(--line)}
+.grid dt{font-weight:700}
+.grid dd{color:var(--sub);font-size:14px}
+
+.vs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.vs .col{border:1px solid var(--line2);border-radius:8px;padding:22px 24px;background:var(--paper-2)}
+.vs .col.us{border-color:var(--pink);background:var(--paper)}
+.vs .h{font-weight:700;font-size:17px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.vs .us .h{color:var(--pink)}
+.vs ul{display:grid;gap:8px;margin-top:12px}
+.vs li{padding-left:16px;position:relative;color:var(--sub)}
+.vs li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:6px;background:var(--line2)}
+.vs .us li{color:var(--ink)}
+.vs .us li::before{background:var(--pink)}
+.ba{display:grid;border-top:1px solid var(--line2)}
+.ba .row{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.ba .row>span:first-child{color:var(--sub)}
+.ba .row>span:last-child{font-weight:600}
+.ba .row i{justify-self:center;width:9px;height:9px;border-top:2px solid var(--pink);border-right:2px solid var(--pink);transform:rotate(45deg)}
+.ba .head{padding:8px 0}
+.ba .head span{font-size:12px;letter-spacing:.12em;color:var(--faint)!important;font-weight:600}
+
+@media (max-width:899px){
+  .vs{grid-template-columns:1fr;gap:12px}
+  .vs .col{padding:16px 18px}
+  .ba .row{grid-template-columns:1fr;gap:2px}
+  .ba .row i{display:none}
+  .ba .row>span:first-child::after{content:" →";color:var(--pink)}
+  .ba .head{display:none}
+  .sl{padding:28px 20px 44px;gap:20px;border-radius:10px}
+  .sl::before{left:20px}
+  .sl h2{font-size:21px}
+  .shot,.phones{grid-template-columns:1fr;gap:20px}
+  .shot .pic,.phones .pic3{order:-1}
+  .cover{min-height:0;padding-block:32px 52px}
+  .cover .logo{margin-bottom:40px}
+  .cover h1{font-size:27px}
+  .cover h2{font-size:23px}
+  .cover .lead{font-size:16px}
+  .pains li{grid-template-columns:1fr}
+  .pains b{font-size:16px}
+  .steps{grid-template-columns:1fr 1fr;gap:12px}
+  .steps li:not(:last-child)::after{display:none}
+  .steps li{padding:14px}
+  .steps .n{font-size:22px}
+  .steps b{font-size:15px}
+  .grid{grid-template-columns:1fr 1fr;gap:0 16px}
+}
+@media (max-width:420px){
+  .steps{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+}
+
+/* ---------- 1枚ずつめくる形（案1 の PC・タブレットの横向き） ---------- */
+.ctrl{display:none}
+@media (min-width:900px) and (min-height:520px){
+  .deck{position:fixed;inset:0;display:grid;place-items:center;padding:24px 24px 76px;gap:0}
+  .deck .sl{display:none;max-width:none;width:min(calc(100vw - 48px),calc((100vh - 100px) * 16 / 9));aspect-ratio:16/9;container-type:inline-size;
+    padding:5.2cqw 5.6cqw 6cqw;gap:3cqw;border-radius:1cqw;font-size:1.5cqw;line-height:1.75;overflow:hidden}
+  .deck .sl.on{display:grid}
+  .deck .sl::after{right:2.4cqw;bottom:1.8cqw;font-size:1cqw}
+  .deck .sl::before{left:5.6cqw;bottom:1.8cqw;font-size:.85cqw}
+  .deck .eb{font-size:1.05cqw}
+  .deck .sl h2{font-size:2.7cqw;margin-top:.7cqw}
+  .deck .txt p:not(.eb):not(.small):not(.lead){margin-top:1.3cqw}
+  .deck .shot,.deck .phones{grid-template-columns:30cqw minmax(0,1fr);gap:4cqw}
+  .deck .pic{border-radius:.7cqw}
+  .deck .pic img{max-height:43cqw;width:100%;object-fit:cover;object-position:top left}
+  .deck .pts{margin-top:1.6cqw;gap:.8cqw}
+  .deck .pts li{padding-left:1.4cqw}
+  .deck .pts li::before{width:.5cqw;height:.5cqw}
+  .deck .cover{align-content:end;padding-bottom:7cqw}
+  .deck .cover .logo{height:1.7cqw;margin-bottom:auto;position:absolute;left:5.6cqw;top:4.6cqw}
+  .deck .cover h1{font-size:3.6cqw;margin-top:1cqw}
+  .deck .cover h2{font-size:3.2cqw}
+  .deck .cover .lead{font-size:1.6cqw;margin-top:1.4cqw}
+  .deck .cover .small{font-size:1cqw;margin-top:3cqw}
+  .deck .cover .acts{margin-top:2.4cqw;gap:2cqw}
+  .deck .cover .mail{font-size:1.2cqw}
+  .deck .btn{font-size:1.3cqw;border-radius:.6cqw}
+  .deck .pains li{padding:1.15cqw 0;gap:.3cqw 2.6cqw}
+  .deck .pains b{font-size:1.5cqw}
+  .deck .pains span{font-size:1.35cqw}
+  .deck .steps{gap:2cqw;margin-top:2cqw}
+  .deck .steps li{padding:1.8cqw 1.6cqw 2.2cqw;gap:.5cqw;border-radius:.7cqw}
+  .deck .steps li:not(:last-child)::after{right:-1.45cqw;width:.8cqw;height:.8cqw}
+  .deck .steps .n{font-size:3cqw}
+  .deck .steps b{font-size:1.6cqw;margin-top:.6cqw}
+  .deck .steps li>span:last-child{font-size:1.25cqw}
+  .deck .pic3{gap:1.2cqw;display:flex;justify-content:center}
+  .deck .pic3 img{height:41cqw;width:auto;border-radius:.9cqw}
+  .deck .chips span{font-size:1.05cqw}
+  .deck .grid{gap:0 2.6cqw}
+  .deck .grid div{padding:1.15cqw 0}
+  .deck .grid dt{font-size:1.45cqw}
+  .deck .grid dd{font-size:1.2cqw}
+  .deck .vs{gap:2.4cqw;margin-top:1cqw}
+  .deck .vs .col{padding:2.2cqw 2.4cqw;border-radius:.7cqw}
+  .deck .vs .h{font-size:1.6cqw;padding-bottom:1cqw}
+  .deck .vs ul{gap:1cqw;margin-top:1.4cqw}
+  .deck .vs li{font-size:1.45cqw;padding-left:1.4cqw}
+  .deck .vs li::before{width:.5cqw;height:.5cqw}
+  .deck .ba .row{padding:1.25cqw 0;gap:1.2cqw;grid-template-columns:minmax(0,1fr) 3cqw minmax(0,1fr);font-size:1.5cqw}
+  .deck .ba .row i{width:.8cqw;height:.8cqw}
+  .deck .ba .head{padding:.6cqw 0}
+  .deck .ba .head span{font-size:1cqw}
+  .deck .list,.deck .table,.deck .tools,.deck .flow,.deck .compare{align-content:center;gap:3.4cqw}
+  .deck .list h2,.deck .table h2,.deck .tools h2,.deck .flow h2,.deck .compare h2{font-size:3cqw}
+  .deck .pains li{padding:1.5cqw 0}
+  .deck .pains b{font-size:1.8cqw}
+  .deck .pains span{font-size:1.55cqw}
+  .deck .ba .row{font-size:1.8cqw;padding:1.45cqw 0}
+  .deck .grid dt{font-size:1.8cqw}
+  .deck .grid dd{font-size:1.45cqw}
+  .deck .grid div{padding:1.5cqw 0}
+  .deck .vs .h{font-size:1.9cqw}
+  .deck .vs li{font-size:1.7cqw}
+  .deck .vs .col{padding:2.6cqw 2.8cqw}
+  .deck .steps .n{font-size:3.6cqw}
+  .deck .steps b{font-size:1.9cqw}
+  .deck .steps li>span:last-child{font-size:1.45cqw}
+  .deck .steps li{padding:2.2cqw 2cqw 2.6cqw}
+  .ctrl{display:flex;position:fixed;left:50%;bottom:20px;transform:translateX(-50%);align-items:center;gap:4px;background:var(--paper);border:1px solid var(--line2);border-radius:999px;padding:4px;z-index:5}
+  .ctrl button{all:unset;cursor:pointer;width:36px;height:36px;display:grid;place-items:center;border-radius:999px;color:var(--ink)}
+  .ctrl button:hover{background:var(--paper-2)}
+  .ctrl button:focus-visible{outline:2px solid var(--pink)}
+  .ctrl button[disabled]{opacity:.3;cursor:default}
+  .ctrl svg{width:16px;height:16px}
+  .ctrl output{font-family:var(--num);font-variant-numeric:tabular-nums;font-size:14px;min-width:4.5em;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<main class="doc deck">
+<section data-pg="1 / 13" class="sl cover" id="p1">
+  <div class="txt">
+    <img class="logo" src="img/logo-dark.png" alt="SOLEON" width="126" height="20">
+    <p class="eb">株式会社SOLEON のご紹介</p>
+    <h1>御社の仕事に合わせて、専用の道具をつくります。</h1>
+    <p class="lead">紙・Excel・手作業でやっていることを、会社ごとの画面に。</p>
+    <p class="small">資料の画面はすべてテストデータです</p>
+  </div>
+</section>
+
+<section data-pg="2 / 13" class="sl list" id="p2">
+  <div class="txt">
+    <p class="eb">よく聞くお話</p>
+    <h2>こんなこと、ありませんか。</h2>
+  </div>
+  <ul class="pains">
+    <li><b>同じ数字を、何度も書き写している</b><span>FAX で届いた注文を Excel に打ち直し、さらに別の表にも写している</span></li>
+    <li><b>その人しか分からない Excel がある</b><span>担当の人が休むと、どこに何があるか誰も分からない</span></li>
+    <li><b>集計に時間がかかる</b><span>数字がまとまるのは月末。気づいたときには遅い</span></li>
+    <li><b>市販のソフトが合わなかった</b><span>項目が足りない、使わない機能ばかり、結局 Excel に戻った</span></li>
+    <li><b>現場の様子が、行かないと分からない</b><span>いま誰が何をしているかを、聞いて回っている</span></li>
+  </ul>
+</section>
+
+<section data-pg="3 / 13" class="sl compare" id="p3">
+  <div class="txt">
+    <p class="eb">SOLEON がすること</p>
+    <h2>お話を聞いて、その会社のための画面を作ります。</h2>
+  </div>
+  <div class="vs">
+    <div class="col"><p class="h">市販のソフト</p><ul><li>決まった形に、仕事のやり方を合わせる</li><li>使わない機能も含めて覚える</li><li>合わないところは、手作業で補う</li></ul></div>
+    <div class="col us"><p class="h">SOLEON のオーダーメイド</p><ul><li>いまの仕事のやり方に、画面を合わせる</li><li>その会社で使うものだけを置く</li><li>使いながら出てきた要望を、足していく</li></ul></div>
+  </div>
+</section>
+
+<section data-pg="4 / 13" class="sl shot" id="p4">
+  <div class="txt">
+    <p class="eb">作ったものの例</p>
+    <h2>ある成形工場のために作った道具です。</h2>
+    <p>注文・在庫・生産の予定・日報・品質の記録を、1つの画面にまとめました。工場の事務所と現場で、毎日使われています。</p>
+    <p>ここから、何ができるようになったかをご紹介します。</p>
+  </div>
+  <figure class="pic"><img src="img/home.webp" alt="作った道具のホーム画面。使う機能の札が並ぶ" width="1600" height="1000"></figure>
+</section>
+
+<section data-pg="5 / 13" class="sl shot" id="p5">
+  <div class="txt">
+    <p class="eb">例　1</p>
+    <h2>注文書を置くと、作る数が出る</h2>
+    <p>届いた注文書（PDF・Excel・FAX の写真）を置くだけで、数を読み取ります。いまの在庫と合わせて、品番ごとに「あといくつ作るか」「いつ在庫が切れるか」が出ます。</p>
+  </div>
+  <figure class="pic"><img src="img/stock-table.webp" alt="在庫表。品番ごとに日ごとの出荷・入荷・在庫の見込みが並ぶ" width="1600" height="1000" loading="lazy"></figure>
+</section>
+
+<section data-pg="6 / 13" class="sl shot" id="p6">
+  <div class="txt">
+    <p class="eb">例　2</p>
+    <h2>工場の様子が、壁の画面で分かる</h2>
+    <p>どの機械で何を作っていて、あとどれくらいで終わるか。呼び出しや不良の増えすぎは、色で知らせます。見に行かなくても、事務所から分かります。</p>
+  </div>
+  <figure class="pic"><img src="img/board.webp" alt="壁のモニタ。機械ごとに作っているものと進み具合が並ぶ" width="1600" height="900" loading="lazy"></figure>
+</section>
+
+<section data-pg="7 / 13" class="sl phones" id="p7">
+  <div class="txt">
+    <p class="eb">例　3</p>
+    <h2>現場の日報は、スマホやタブレットで</h2>
+    <p>機械を選んで、数を入れて、提出するだけ。パソコンに慣れていない人も、その日から使えています。</p>
+    <p>外国から来た人のために、言葉も切り替えられるようにしました。</p>
+    <p class="chips"><span>日本語</span><span>Tiếng Việt</span><span>Filipino</span><span>English</span></p>
+  </div>
+  <div class="pic3"><img src="img/phone-pick.webp" alt="スマホで機械を選ぶ" width="780" height="1688" loading="lazy"><img src="img/phone-entry.webp" alt="スマホの日報" width="780" height="1688" loading="lazy"><img src="img/phone-board.webp" alt="スマホで見る工場の様子" width="780" height="1688" loading="lazy"></div>
+</section>
+
+<section data-pg="8 / 13" class="sl shot" id="p8">
+  <div class="txt">
+    <p class="eb">例　4</p>
+    <h2>集計は、その場で見られる</h2>
+    <p>日報に入った数が、そのまま集計になります。日ごと・機械ごと・不良の種類ごとに、月末を待たずに比べられます。</p>
+  </div>
+  <figure class="pic"><img src="img/dash.webp" alt="集計の画面。日ごとの生産数と不良の種類が並ぶ" width="1600" height="1000" loading="lazy"></figure>
+</section>
+
+<section data-pg="9 / 13" class="sl table" id="p9">
+  <div class="txt">
+    <p class="eb">この工場で変わったこと</p>
+    <h2>手でやっていたことが、画面でつながりました。</h2>
+  </div>
+  <div class="ba">
+    <div class="row head"><span>これまで</span><span></span><span>いま</span></div>
+    <div class="row"><span>注文書を見て、Excel に打ち直す</span><i aria-hidden="true"></i><span>注文書を置くと、数が入る</span></div>
+    <div class="row"><span>在庫を数えて、作る数を計算する</span><i aria-hidden="true"></i><span>作る数と、在庫が切れる日が出る</span></div>
+    <div class="row"><span>ホワイトボードに予定を書く</span><i aria-hidden="true"></i><span>予定が並び、壁の画面とタブレットに出る</span></div>
+    <div class="row"><span>紙の日報を、あとで集計する</span><i aria-hidden="true"></i><span>入れた数が、そのまま在庫と集計に入る</span></div>
+    <div class="row"><span>現場に行って様子を聞く</span><i aria-hidden="true"></i><span>事務所の画面で分かる</span></div>
+  </div>
+</section>
+
+<section data-pg="10 / 13" class="sl tools" id="p10">
+  <div class="txt">
+    <p class="eb">ほかにも作ってきたもの</p>
+    <h2>会社の「いつもの作業」なら、たいてい画面にできます。</h2>
+  </div>
+  <dl class="grid">
+    <div><dt>在庫の管理</dt><dd>拠点ごとの入荷・出荷・棚卸</dd></div>
+    <div><dt>発注の一覧</dt><dd>材料や部品を、だれがいつ頼んだか</dd></div>
+    <div><dt>購入の申請と承認</dt><dd>申請・承認・差し戻しをチャットに通知</dd></div>
+    <div><dt>作業の手順書</dt><dd>写真入りの手順書を品番ごとに</dd></div>
+    <div><dt>不良の写真</dt><dd>現場で撮って、そのまま共有</dd></div>
+    <div><dt>配車の予定</dt><dd>だれが、いつ、どこへ運ぶか</dd></div>
+    <div><dt>作業服などの支給</dt><dd>だれに何を渡したかの記録</dd></div>
+    <div><dt>点検の記録</dt><dd>始業点検と不具合の報告</dd></div>
+    <div><dt>データの取り出し</dt><dd>いつでも Excel で開ける形に</dd></div>
+  </dl>
+</section>
+
+<section data-pg="11 / 13" class="sl flow" id="p11">
+  <div class="txt">
+    <p class="eb">進め方</p>
+    <h2>難しい準備はいりません。いまのやり方を見せてください。</h2>
+  </div>
+  <ol class="steps">
+    <li><span class="n">1</span><b>お話を聞く</b><span>困っていること、いま使っている紙や Excel を見せてもらう</span></li>
+    <li><span class="n">2</span><b>見本を作る</b><span>実際の画面に近い見本で、形を一緒に決める</span></li>
+    <li><span class="n">3</span><b>使ってもらう</b><span>まず動くものを置き、現場で試してもらう</span></li>
+    <li><span class="n">4</span><b>直し続ける</b><span>使って出てきた声を見ながら、足していく</span></li>
+  </ol>
+</section>
+
+<section data-pg="12 / 13" class="sl list" id="p12">
+  <div class="txt">
+    <p class="eb">使うときのこと</p>
+    <h2>特別な機械やソフトは、いりません。</h2>
+  </div>
+  <ul class="pains">
+    <li><b>いまある機械で使えます</b><span>パソコン・タブレット・スマホのブラウザで開くだけ。インストールは要りません</span></li>
+    <li><b>見せる人を選べます</b><span>値段のような数字は、見られる人を決めておけます</span></li>
+    <li><b>人の追加は、画面から</b><span>人の追加や見られる範囲の変更は、管理する人が画面でできます</span></li>
+    <li><b>データは、いつでも取り出せます</b><span>入れたものは Excel で開ける形で落とせます</span></li>
+  </ul>
+</section>
+
+<section data-pg="13 / 13" class="sl cover end" id="p13">
+  <div class="txt">
+    <p class="eb">ご相談</p>
+    <h2>「これ、画面にできる？」から、気軽にどうぞ。</h2>
+    <p class="lead">製造業以外のお仕事でも大丈夫です。いまの紙や Excel を見ながら、どこから楽にするかを一緒に決めます。</p>
+    <p class="acts"><a class="btn" href="https://soleon.jp/#contact" target="_blank" rel="noopener">相談する</a><span class="mail">morita_daisuke@soleon.jp</span></p>
+    <p class="small">株式会社SOLEON　／　<a href="https://soleon.jp/" target="_blank" rel="noopener">soleon.jp</a></p>
+  </div>
+</section>
+</main>
+<nav class="ctrl" aria-label="めくる">
+  <button type="button" id="prev" aria-label="前へ"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3 5 8l5 5"/></svg></button>
+  <output id="pos">1 / 13</output>
+  <button type="button" id="next" aria-label="次へ"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m6 3 5 5-5 5"/></svg></button>
+</nav>
+<script>
+(() => {
+  const doc = document.querySelector('.deck'); if (!doc) return
+  const ss = [...doc.querySelectorAll('.sl')], pos = document.getElementById('pos')
+  const prev = document.getElementById('prev'), next = document.getElementById('next')
+  const mq = matchMedia('(min-width:900px) and (min-height:520px)')
+  let i = Math.max(0, ss.findIndex((s) => '#' + s.id === location.hash))
+  const show = () => {
+    ss.forEach((s, k) => s.classList.toggle('on', k === i))
+    pos.textContent = `${i + 1} / ${ss.length}`
+    prev.disabled = i === 0; next.disabled = i === ss.length - 1
+    try { history.replaceState(null, '', '#' + ss[i].id) } catch (e) {}
+  }
+  const go = (d) => { const n = Math.max(0, Math.min(ss.length - 1, i + d)); if (n !== i) { i = n; show() } }
+  prev.addEventListener('click', () => go(-1)); next.addEventListener('click', () => go(1))
+  addEventListener('keydown', (e) => {
+    if (!mq.matches || e.target.closest('input,textarea,select')) return
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(e.key)) { e.preventDefault(); go(1) }
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(e.key)) { e.preventDefault(); go(-1) }
+    else if (e.key === 'Home') { i = 0; show() } else if (e.key === 'End') { i = ss.length - 1; show() }
+  })
+  let x0 = null
+  doc.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX }, { passive: true })
+  doc.addEventListener('touchend', (e) => { if (x0 == null || !mq.matches) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1); x0 = null })
+  doc.addEventListener('click', (e) => { if (!mq.matches || e.target.closest('a,button')) return; go(e.clientX > innerWidth / 2 ? 1 : -1) })
+  show()
+})()
+</script>
+</body>
+</html>
