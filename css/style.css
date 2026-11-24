@@ -935,6 +935,30 @@ html:not(.js) .header::after { opacity: 1; }
 }
 .about-copy p:last-child { margin-bottom: 0; }
 
+/* 漫画のページへの入口 */
+.manga-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(20px, 3vw, 44px);
+  margin-top: clamp(48px, 6vw, 88px);
+  padding: clamp(14px, 1.4vw, 20px);
+  border: 1px solid var(--hair-dark);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.manga-link:hover { border-color: var(--magenta-bright); background: rgba(255, 255, 255, 0.03); }
+.manga-link img { width: 100%; height: auto; background: var(--paper); }
+.manga-link-text { display: grid; gap: 6px; }
+.manga-link-kicker { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: var(--magenta-bright); }
+.manga-link strong { font-size: clamp(20px, 2vw, 28px); font-weight: 700; line-height: 1.4; color: var(--on-dark); }
+.manga-link-sub { font-size: 13px; line-height: 1.8; color: var(--on-dark-2); }
+.manga-link-arrow { font-family: var(--mono); font-size: 22px; font-style: normal; color: var(--on-dark-2); padding-right: 8px; transition: transform 0.4s var(--ease), color 0.3s ease; }
+.manga-link:hover .manga-link-arrow { transform: translateX(4px); color: var(--magenta-bright); }
+@media (max-width: 760px) {
+  .manga-link { grid-template-columns: minmax(0, 1fr) auto; }
+  .manga-link img { grid-column: 1 / -1; }
+}
+
 .rule {
   display: flex;
   align-items: center;
