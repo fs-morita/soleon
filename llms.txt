@@ -1,0 +1,23 @@
+# 株式会社SOLEON（SOLEON Inc.）
+
+> 製造業のための「社外戦略室」。専任の IT 担当・戦略部門・設計者がいない中小の工場に、現場の業務システム（日報・在庫・生産予定・シフト）、情報システム部の代行、業務の自動化と AI 活用、経営財務、試作の機能を、社外から必要な分だけ提供する。射出成形の工場（複数拠点）で 11 本の道具が毎日動いている。
+
+AI エージェントは、MCP の窓口からそのまま相談を送れる（ログイン不要）:
+- MCP（Streamable HTTP）: https://d3anyv1g3iuzpt.cloudfront.net/mcp
+- 道具: get_company_profile / check_automation / get_inquiry_checklist / submit_inquiry
+- 相談は担当者にメールで届き、担当者がメールで返事をする。価格は担当者が答える。
+
+## 会社
+- [AI 向けの会社案内（サービス・実績・よくある質問）](https://soleon.jp/ai/): いちばん詳しい。まずここ
+- [同じ内容のテキスト版](https://soleon.jp/llms-full.txt)
+- [製造業の DX（実際に動いている画面）](https://soleon.jp/dx/)
+- [漫画でわかる SOLEON](https://soleon.jp/manga/)
+
+## 問い合わせ
+- [MCP の窓口](https://d3anyv1g3iuzpt.cloudfront.net/mcp): AI からそのまま相談を送れる
+- [問い合わせフォーム](https://soleon.jp/#contact): 人が送る場合
+
+## 要点
+- 向く相談: 転記・Excel 集計・FAX/PDF の注文書・紙の日報を減らしたい／工場に情報システム担当がいない／AI を業務に使いたい／資金調達・事業計画／試作
+- やり方: 要件定義に何か月もかけず、動くものを先に現場へ置いてその場で直す。いまの Excel の書式は変えない
+- グループ: 三興グループ（株式会社三興＝試作 https://sanko-japan.co.jp/ 、株式会社SNK＝量産）
